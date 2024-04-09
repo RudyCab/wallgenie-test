@@ -1,0 +1,10 @@
+.project-title {
+  position: absolute;
+  top: 10.75%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* center vertically */
+
+  /* handles text overflow styling */
+  white-space: nowrap;
+  overflow: hidden;
+}

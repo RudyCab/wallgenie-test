@@ -1,0 +1,29 @@
+/* CurrentProjectCard.css */
+.current-project-card {
+    width: 300px;
+    border-radius: 25px;
+    margin-bottom: 50px;
+    margin: 0 auto;
+    padding-bottom: 25px;
+    background-color: #2A7676;
+    
+  }
+  
+  .current-project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    margin-bottom: 25px;
+  }
+  
+  .current-project-card button {
+    position: relative;
+    background-color: #FDCE78;
+    color: #164343;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-radius: 75px;
+    padding: 10px 20px; 
+    cursor: pointer; 
+    font-size: 18px;
+  }

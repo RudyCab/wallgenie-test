@@ -1,0 +1,20 @@
+.decorGrid-container {
+  display: flex;
+  justify-content: center;
+  overflow-y: auto; 
+  max-height: 75vh;
+}
+
+.decorGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-gap: 15px; 
+  list-style-type: none;
+  margin-left: -30px;
+  margin-top: -35px;
+}
+
+.decorGrid li {
+  padding-bottom: 0px; /* Add padding to the bottom of each grid item */
+}
+
