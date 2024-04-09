@@ -14,8 +14,8 @@ import { FaCircle } from "react-icons/fa";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import Colors from "./Colors";
 
-function WallEditorPage({images}) {
-  const [shuffle, setShuffle] = useState(false)
+function WallEditorPage({ images }) {
+  const [shuffle, setShuffle] = useState(false);
 
   const [alertDisplayed, setAlertDisplayed] = useState(false);
   const parentRef = useRef(null);
@@ -94,8 +94,8 @@ function WallEditorPage({images}) {
     Colors.LIGHTGRAY,
     Colors.GRAY,
     Colors.TAN,
-    Colors.BROWN,
     Colors.BLACK,
+    Colors.BROWN,
   ];
 
   return (
@@ -136,26 +136,23 @@ function WallEditorPage({images}) {
           )}
         </div>
 
-
-         
-            <div style={{height:'10px', width:'100%', background: "#215F5F"}}></div>
-            <div className="row image-container" style={{height: "100%"}} >
-              <div class="col">
-                
-            {images && images.map((imageUrl, index) => (
-              <Draggable
-              img={imageUrl}
-              alt={`Image ${index + 1}`}
-              className="image"
-              shuffle={shuffle}
-              setShuffle={setShuffle}
-            />
-          ))}
+        <div
+          style={{ height: "10px", width: "100%", background: "#215F5F" }}
+        ></div>
+        <div className="row image-container" style={{ height: "100%" }}>
+          <div class="col">
+            {images &&
+              images.map((imageUrl, index) => (
+                <Draggable
+                  img={imageUrl}
+                  alt={`Image ${index + 1}`}
+                  className="image"
+                  shuffle={shuffle}
+                  setShuffle={setShuffle}
+                />
+              ))}
           </div>
-          </div>
-              
-     
-      
+        </div>
       </div>
     </div>
   );
