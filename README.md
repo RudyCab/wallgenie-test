@@ -1,3 +1,3 @@
 ## GitHub Pages Link:
 
-https://rudycab.github.io/wallgenie/
+https://rudycab.github.io/wallgenie-test/
