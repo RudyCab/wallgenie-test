@@ -18,6 +18,12 @@ function GalleryPage({ importedImages, setImportedImages }) {
     };
   }, []);
 
+  let themeColor = "#215F5F";
+  const metaTag = document.querySelector("#theme-color-meta");
+  if (metaTag) {
+    metaTag.setAttribute("content", themeColor);
+  }
+
   const handleImageUpload = (newImages) => {
     newImages.forEach((image, index) => {
       // Convert image to Base64 string

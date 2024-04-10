@@ -12,6 +12,12 @@ function HomePage() {
     };
   }, []);
 
+  let themeColor = "#215F5F";
+  const metaTag = document.querySelector("#theme-color-meta");
+  if (metaTag) {
+    metaTag.setAttribute("content", themeColor);
+  }
+
   return (
     <div>
       <img id="logo" src={logo} alt="logo of name and genie lamp" />

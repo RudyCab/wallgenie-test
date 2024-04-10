@@ -49,7 +49,7 @@ function WallEditorPage({ images }) {
   Create new `Wall` instance
   */
   const wall = new Wall(
-    { x: x, y: window.innerHeight * 0.2 - 20 },
+    { x: x, y: window.innerHeight * 0.25 - 20 },
     {
       width: wall_width,
       height: (3 / 4) * wall_width,
