@@ -1,9 +1,10 @@
 // Sidebar Icons
 import { IoShuffle } from "react-icons/io5";
-import { LuLassoSelect } from "react-icons/lu";
+// import { LuLassoSelect } from "react-icons/lu";
 import { RiImageAddFill } from "react-icons/ri";
-// import { FaCamera } from "react-icons/fa";
-// import { MdOutlineSaveAlt } from "react-icons/md";
+import { IoCameraOutline } from "react-icons/io5";
+import { MdOutlineSaveAlt } from "react-icons/md";
+import { SiSpotlight } from "react-icons/si";
 // import { VscSettings } from "react-icons/vsc";
 
 const Sidebar = ({
@@ -12,8 +13,14 @@ const Sidebar = ({
   setPopupType,
   setShuffle,
 }) => {
-  const types = ["shuffle", "multiselect", "upload"];
-  const icons = [IoShuffle, LuLassoSelect, RiImageAddFill];
+  const types = ["shuffle", "upload", "camera", "save", "spotlight"];
+  const icons = [
+    IoShuffle,
+    RiImageAddFill,
+    IoCameraOutline,
+    MdOutlineSaveAlt,
+    SiSpotlight,
+  ];
 
   const handleOnClick = (type) => {
     if (type == 0) {
@@ -30,13 +37,18 @@ const Sidebar = ({
         {icons.map((Icon, index) => (
           <button
             key={index}
-            className={`sidebar-button ${
-              alertDisplayed ? "sidebar-button-disabled" : ""
-            }`}
+            className={"sidebar-button"}
             onClick={() => handleOnClick(index)}
             disabled={alertDisplayed}
           >
-            <Icon className="sidebar-icon" size={24} />
+            <Icon
+              className={`${
+                alertDisplayed
+                  ? "sidebar-icon-disabled"
+                  : "sidebar-icon-enabled"
+              }`}
+              size={20}
+            />
           </button>
         ))}
       </div>

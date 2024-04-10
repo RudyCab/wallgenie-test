@@ -17,7 +17,7 @@ const SettingsPopup = ({ alertDisplayed, setAlertDisplayed, setShuffle }) => {
       }
       position="bottom"
       closeOnDocumentClick={false}
-      contentStyle={{ width: 55.5 }}
+      contentStyle={{ width: 62.5 }}
     >
       <Sidebar
         alertDisplayed={alertDisplayed}
@@ -40,7 +40,7 @@ const Alert = ({ setAlertDisplayed, popupType }) => {
     position: "fixed",
     top: "50%",
     left: "50%",
-    transform: "translate(-50%, -50%)",
+    transform: "translate(-50%, -100%)",
     backgroundColor: "rgba(254, 253, 249, 0.9)",
     boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
     padding: "30px 20px",
@@ -64,13 +64,18 @@ const Alert = ({ setAlertDisplayed, popupType }) => {
   let msg = "";
   switch (popupType) {
     case "shuffle":
-      msg = "You decor items have been shuffled!";
-      break;
-    case "multiselect":
-      msg = "Multiselect is now enabled!";
       break;
     case "upload":
-      msg = "Visit the Decor Gallery page for more!";
+      msg = "Add image upload functionality here";
+      break;
+    case "camera":
+      msg = "Add camera functionality here";
+      break;
+    case "save":
+      msg = "Add save functionality here";
+      break;
+    case "spotlight":
+      msg = "Add spotlight functionality here";
       break;
     default:
       break;

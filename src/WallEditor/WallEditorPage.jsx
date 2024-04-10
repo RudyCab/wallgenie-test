@@ -80,7 +80,7 @@ function WallEditorPage({ images }) {
 
   const dropdownButtonStyle = {
     position: "fixed",
-    top: wall.coordinates.y - 42.5,
+    top: wall.coordinates.y - 45,
     left: "50%",
     transform: "translateX(-50%)",
   };
@@ -121,15 +121,18 @@ function WallEditorPage({ images }) {
 
         {/* WALL COLOR DROPDOWN MENU */}
         <div className="dropdown-container" style={dropdownButtonStyle}>
-          {!alertDisplayed && (
-            <DropdownButton drop="up-centered" title="Wall Color" variant="n/a">
-              <div className="dropdown-grid">
-                {colors.map((color, index) => (
-                  <ColorDropdownItem color={color} key={index} />
-                ))}
-              </div>
-            </DropdownButton>
-          )}
+          <DropdownButton
+            drop="up-centered"
+            title="Wall Color"
+            variant="n/a"
+            disabled={alertDisplayed}
+          >
+            <div className="dropdown-grid">
+              {colors.map((color, index) => (
+                <ColorDropdownItem color={color} key={index} />
+              ))}
+            </div>
+          </DropdownButton>
         </div>
 
         {/* RENDER WALL COMPONENT */}

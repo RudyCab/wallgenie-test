@@ -14,32 +14,17 @@
   align-items: flex-start;
 }
 
-/* .sidebar-button {
-  background-color: #2A7676;
-  height: 40px;
-  width: 40px;
-  border-radius: 7px;
-  border-width: 0px;
-  margin-top: 2.5px;
-  margin-bottom: 2.5px;
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.314);
-} */
-
-/* .sidebar-icon {
-  color: white;
-} */
-
 .sidebar-button {
   background-color: transparent;
   border-width: 0px;
-  margin-top: 4.5px;
-  margin-bottom: 4.5px;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
 }
 
-/* .sidebar-button-disabled {
-  background-color: #5d8f8f;
-} */
+.sidebar-icon-disabled {
+  color: #267a7a8c;
+}
 
-.sidebar-icon {
+.sidebar-icon-enabled {
   color: #2A7676;
 }
