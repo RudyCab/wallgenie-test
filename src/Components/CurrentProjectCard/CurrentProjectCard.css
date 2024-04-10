@@ -4,7 +4,7 @@
   border-radius: 25px;
   margin-bottom: 50px;
   margin: 0 auto;
-  padding-bottom: 25px;
+  padding-bottom: 17.5px;
   background-color: #2A7676;
   box-shadow: 
     0 0 15px #0000001a,
@@ -18,15 +18,11 @@
   padding: 17.5px;
 }
 
-.current-project-card button {
+.current-project-card span {
   position: relative;
-  background-color: #f5c873;
-  color: #164343;
+  color: #f5c872;
   font-family: 'Roboto', sans-serif;
   font-weight: bolder;
-  border-radius: 20px;
-  padding: 5px 10px;
-  cursor: pointer; 
-  font-size: 20px;
-  margin-bottom: -5px;
+  font-style: italic;
+  font-size: 28px;
 }

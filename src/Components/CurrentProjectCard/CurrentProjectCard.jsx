@@ -6,7 +6,7 @@ function CurrentProjectCard({ imagePath }) {
   return (
     <div className="current-project-card">
       <img src={hardCodedCurrentImage} alt="Current Project Image" />
-      <button>Current Project</button>
+      <span>Project Spotlight</span>
     </div>
   );
 }

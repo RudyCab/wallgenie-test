@@ -10,7 +10,9 @@ function GalleryGrid({ images }) {
             <img
               src={imageUrl}
               alt={`Image ${index + 1}`}
-              className="decorItem"
+              className={`decorItem ${
+                index === images.length - 1 ? "lastDecorItem" : ""
+              }`}
             />
           </li>
         ))}

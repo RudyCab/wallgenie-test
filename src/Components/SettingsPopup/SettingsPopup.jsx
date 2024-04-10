@@ -17,7 +17,7 @@ const SettingsPopup = ({ alertDisplayed, setAlertDisplayed, setShuffle }) => {
       }
       position="bottom"
       closeOnDocumentClick={false}
-      contentStyle={{ width: 53 }}
+      contentStyle={{ width: 47 }}
     >
       <Sidebar
         alertDisplayed={alertDisplayed}

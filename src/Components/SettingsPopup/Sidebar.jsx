@@ -36,7 +36,7 @@ const Sidebar = ({
             onClick={() => handleOnClick(index)}
             disabled={alertDisplayed}
           >
-            <Icon className="sidebar-icon" size={20} />
+            <Icon className="sidebar-icon" size={24} />
           </button>
         ))}
       </div>
