@@ -80,7 +80,7 @@ function WallEditorPage({ images }) {
 
   const dropdownButtonStyle = {
     position: "fixed",
-    top: wall.coordinates.y - 45,
+    top: wall.coordinates.y - 44,
     left: "50%",
     transform: "translateX(-50%)",
   };
