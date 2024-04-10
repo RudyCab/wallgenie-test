@@ -19,6 +19,7 @@
 
 img {
   display: block;
-  margin: 140px auto 0; 
-  width: 325px;
+  margin: 100px auto 0; 
+  padding-bottom: 25px;
+  width: 300px;
 }
