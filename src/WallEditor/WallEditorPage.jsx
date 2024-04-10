@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
@@ -14,6 +14,10 @@ import "./WallEditorPage.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 function WallEditorPage({ images }) {
+  useEffect(() => {
+    document.body.style.backgroundColor = "#ffffff";
+  }, []);
+
   const [shuffle, setShuffle] = useState(false);
 
   const [alertDisplayed, setAlertDisplayed] = useState(false);
@@ -25,8 +29,7 @@ function WallEditorPage({ images }) {
     navigate(-1);
   };
 
-  // for debugging purposess
-  const __DISPLAY_SLIDER = true;
+  const __DISPLAY_SLIDER = true; // for debugging purposes
 
   // Wall Constants
   let PADDING = 17.5;
@@ -46,7 +49,7 @@ function WallEditorPage({ images }) {
   */
   const VERTICAL_OFFSET = wall_width !== MAX_WIDTH ? -60 : -15; // adjust offset based on if user's on phone vs laptop
   const wall = new Wall(
-    { x: x, y: window.innerHeight * 0.25 + VERTICAL_OFFSET },
+    { x: x, y: window.innerHeight * 0.175 + VERTICAL_OFFSET },
     {
       width: wall_width,
       height: (3 / 4) * wall_width,
@@ -100,7 +103,7 @@ function WallEditorPage({ images }) {
   return (
     <div className="wallEditor">
       <div
-        className="page-container split-pane-wrapper"
+        className="page-container"
         style={{ pointerEvents: "auto" }}
       >
         <div ref={parentRef} className="top-row">
@@ -109,7 +112,7 @@ function WallEditorPage({ images }) {
             disabled={alertDisplayed}
             onClick={handleBackButtonClick}
           >
-            <IoIosArrowBack />
+            <IoIosArrowBack color="black" />
           </button>
           <ProjectTitle alertDisplayed={alertDisplayed} />
           <SettingsPopup

@@ -12,7 +12,7 @@ const SettingsPopup = ({ alertDisplayed, setAlertDisplayed, setShuffle }) => {
     <Popup
       trigger={
         <button className="settings-button" disabled={alertDisplayed}>
-          <GiHamburgerMenu />
+          <GiHamburgerMenu color="black"/>
         </button>
       }
       position="bottom"

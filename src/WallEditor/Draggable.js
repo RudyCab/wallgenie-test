@@ -8,9 +8,7 @@ class Drag extends React.Component {
     this.state = {
       top: 0,
       left: 0,
-      // todo- fix aspect ratio
-      height: "15vh",
-      width: "10vh",
+      height: "10vh",
       mouseStart: { x: 0, y: 0 },
       dragging: false,
     };

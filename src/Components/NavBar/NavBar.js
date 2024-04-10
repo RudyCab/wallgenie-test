@@ -11,6 +11,11 @@ function NavBar() {
   const location = useLocation();
   const ICON_MULTIPLIER = 1.1;
 
+  const isWallEditorPage = location.pathname === "/WallEditor";
+  if (isWallEditorPage) {
+    return null;
+  }
+
   return (
     <nav className="navbar">
       <ul>
@@ -24,11 +29,11 @@ function NavBar() {
             <AiFillHome size={33.5 * ICON_MULTIPLIER} />
           </Link>
         </li>
-        <li className={location.pathname === "/WallEditor" ? "active" : ""}>
+        {/* <li className={location.pathname === "/WallEditor" ? "active" : ""}>
           <Link to="/WallEditor">
             <ImPencil2 size={28.5 * ICON_MULTIPLIER} />
           </Link>
-        </li>
+        </li> */}
         <li className={location.pathname === "/Projects" ? "active" : ""}>
           <Link to="/Projects">
             <FaFolder size={30 * ICON_MULTIPLIER} style={{ marginTop: 2 }} />

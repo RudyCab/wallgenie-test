@@ -1,4 +1,17 @@
-.homepage-buttons {
+#logo {
+  display: block;
+  margin: 75px auto 0;
+  padding-left: 2.5px;
+  padding-bottom: 62.5px;
+  width: 300px;
+}
+
+.homepage-button-container {
+  text-align: center; 
+  margin: -40px auto 0; 
+}
+
+.new-project-button {
   position: relative;
   background-color: #f5c873;
   color: #164343;
@@ -10,16 +23,4 @@
   transition: background-color 0.3s ease;
   font-size: 20px;
   margin-top: 25px;
-}
-
-.homepage-button-container {
-  text-align: center; 
-  margin: -100px auto 0; 
-}
-
-img {
-  display: block;
-  margin: 100px auto 0; 
-  padding-bottom: 25px;
-  width: 300px;
 }

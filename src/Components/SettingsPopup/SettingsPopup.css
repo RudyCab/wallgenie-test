@@ -1,6 +1,6 @@
 .settings-button {
   position: absolute;
-  right: 7.5%;
+  right: 5%;
   top: 10%;
   transform: translateY(-50%);
   border-width: 0px;
@@ -33,5 +33,4 @@
 .sidebar-icon {
   color: white;
   font-size: 2em;
-  padding-right: 4px;
 }

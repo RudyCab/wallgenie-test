@@ -3,10 +3,14 @@ body {
   overflow: hidden;
 }
 
+.top-row {
+  margin-top: -25px;
+}
+
 .back-button {
   position: absolute;
   top: 10%;
-  left: 7.5%;
+  left: 5%;
   transform: translateY(-50%);
   border-width: 0px;
   background-color: transparent;

@@ -3,20 +3,23 @@
   justify-content: center;
   overflow-y: auto;
   margin-top: 90px;
-  height: 650px;
+  height: 632.5px;
 }
 
 .decorGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 25px;
   list-style-type: none;
-  margin-left: -27.5px;
-  margin-right: 7.5px;
-  margin-top: -80px;
+  margin-left: -32.5px;
 }
 
 .decorGrid li {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.decorItem {
+  width: 80vw;
 }

@@ -14,11 +14,11 @@ function HomePage() {
 
   return (
     <div>
-      <img src={logo} alt="logo of name and genie lamp" />
+      <img id="logo" src={logo} alt="logo of name and genie lamp" />
       <div className="homepage-button-container">
         <CurrentProjectCard imagePath="path_to_your_current_project_image" />{" "}
         <Link to="/WallEditor">
-          <button className="homepage-buttons">New Project</button>
+          <button className="new-project-button">New Project</button>
         </Link>
       </div>
     </div>

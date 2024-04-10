@@ -31,7 +31,8 @@
 
 .iconButton {
   cursor: pointer;
+  position: fixed;
+  right: 0;
+  margin-right: 40px;
   font-size: 40px;
-  margin-top: -37.5px;
-  margin-left: 60px;
 }

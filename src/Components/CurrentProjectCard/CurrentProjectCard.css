@@ -15,7 +15,6 @@
   width: 100%;
   height: auto;
   border-radius: 30px;
-  margin-bottom: 7.5px;
   padding: 17.5px;
 }
 
@@ -26,7 +25,8 @@
   font-family: 'Roboto', sans-serif;
   font-weight: bolder;
   border-radius: 20px;
-  padding: 5px 10px; 
+  padding: 5px 10px;
   cursor: pointer; 
   font-size: 20px;
+  margin-bottom: -5px;
 }

@@ -7,7 +7,11 @@ function GalleryGrid({ images }) {
       <ul className="decorGrid">
         {images.map((imageUrl, index) => (
           <li key={index}>
-            <img src={imageUrl} alt={`Image ${index + 1}`} />
+            <img
+              src={imageUrl}
+              alt={`Image ${index + 1}`}
+              className="decorItem"
+            />
           </li>
         ))}
       </ul>

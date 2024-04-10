@@ -22,11 +22,11 @@ const Slider = ({ images, shuffle, setShuffle }) => {
       {/* SLIDER BACKGROUND */}
       <div
         style={{
-          marginTop: 175,
-          height: 260,
+          marginTop: 135,
+          height: 385,
           width: "100%",
           background: "#265d5e",
-          boxShadow: "inset 0 0 20px #0000001a",
+          boxShadow: "inset 0 0 20px #0000002a",
         }}
       />
     </>
