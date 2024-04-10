@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 
-import NavBar from "./Components/NavBar/NavBar.js";
-import HomePage from "./Home/HomePage.jsx";
-import WallEditorPage from "./WallEditor/WallEditorPage.jsx";
-import GalleryPage from "./Gallery/GalleryPage.jsx";
-import ProjectsPage from "./Projects/ProjectsPage.jsx";
+import NavBar from "./Components/NavBar/NavBar";
+import HomePage from "./Home/HomePage";
+import WallEditorPage from "./WallEditor/WallEditorPage";
+import GalleryPage from "./Gallery/GalleryPage";
+import ProjectsPage from "./Projects/ProjectsPage";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";

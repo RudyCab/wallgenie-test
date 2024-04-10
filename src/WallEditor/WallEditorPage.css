@@ -7,6 +7,14 @@ body {
   margin-top: -25px;
 }
 
+.icon-enabled {
+  color: black;
+}
+
+.icon-disabled {
+  color: #00000065;
+}
+
 .back-button {
   position: absolute;
   top: 10%;
@@ -17,7 +25,7 @@ body {
   font-size: 2em;
 }
 
-/* WALL COLOR (DROPDOWN) STUFF */
+/* WALL COLOR DROPDOWN STUFF */
 .dropdown-container {
   display: flex;
   justify-content: center;
@@ -27,4 +35,12 @@ body {
 .dropdown-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+}
+
+/* COLOR PICKER STUFF */
+#HexColorPicker {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
 }

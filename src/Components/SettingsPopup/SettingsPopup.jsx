@@ -12,7 +12,11 @@ const SettingsPopup = ({ alertDisplayed, setAlertDisplayed, setShuffle }) => {
     <Popup
       trigger={
         <button className="settings-button" disabled={alertDisplayed}>
-          <GiHamburgerMenu color="black" />
+          <GiHamburgerMenu
+            className={
+              alertDisplayed ? "top-row-icon-disabled" : "top-row-icon-enabled"
+            }
+          />
         </button>
       }
       position="bottom"
@@ -40,7 +44,7 @@ const Alert = ({ setAlertDisplayed, popupType }) => {
     position: "fixed",
     top: "50%",
     left: "50%",
-    transform: "translate(-50%, -100%)",
+    transform: "translate(-50%, -80%)",
     backgroundColor: "rgba(254, 253, 249, 0.9)",
     boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
     padding: "30px 20px",
@@ -55,6 +59,8 @@ const Alert = ({ setAlertDisplayed, popupType }) => {
     fontSize: "medium",
     marginTop: "7.5px",
     borderRadius: "10px",
+    paddingTop: "3px",
+    paddingBottom: "3px",
   };
 
   const handleClose = () => {
@@ -67,12 +73,6 @@ const Alert = ({ setAlertDisplayed, popupType }) => {
       break;
     case "upload":
       msg = "Add image upload functionality here";
-      break;
-    case "camera":
-      msg = "Add camera functionality here";
-      break;
-    case "save":
-      msg = "Add save functionality here";
       break;
     case "spotlight":
       msg = "Add spotlight functionality here";

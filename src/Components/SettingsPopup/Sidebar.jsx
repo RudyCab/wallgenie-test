@@ -2,8 +2,8 @@
 import { IoShuffle } from "react-icons/io5";
 // import { LuLassoSelect } from "react-icons/lu";
 import { RiImageAddFill } from "react-icons/ri";
-import { IoCameraOutline } from "react-icons/io5";
-import { MdOutlineSaveAlt } from "react-icons/md";
+// import { IoCameraOutline } from "react-icons/io5";
+// import { MdOutlineSaveAlt } from "react-icons/md";
 import { SiSpotlight } from "react-icons/si";
 // import { VscSettings } from "react-icons/vsc";
 
@@ -13,14 +13,8 @@ const Sidebar = ({
   setPopupType,
   setShuffle,
 }) => {
-  const types = ["shuffle", "upload", "camera", "save", "spotlight"];
-  const icons = [
-    IoShuffle,
-    RiImageAddFill,
-    IoCameraOutline,
-    MdOutlineSaveAlt,
-    SiSpotlight,
-  ];
+  const types = ["shuffle", "upload", "spotlight"];
+  const icons = [IoShuffle, RiImageAddFill, SiSpotlight];
 
   const handleOnClick = (type) => {
     if (type == 0) {
@@ -42,12 +36,12 @@ const Sidebar = ({
             disabled={alertDisplayed}
           >
             <Icon
-              className={`${
+              className={
                 alertDisplayed
                   ? "sidebar-icon-disabled"
                   : "sidebar-icon-enabled"
-              }`}
-              size={20}
+              }
+              size={35}
             />
           </button>
         ))}
