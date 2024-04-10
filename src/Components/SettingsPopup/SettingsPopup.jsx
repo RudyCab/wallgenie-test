@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Popup from "reactjs-popup";
-import "reactjs-popup/dist/index.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Sidebar from "./Sidebar";
 import "./SettingsPopup.css";
+import "reactjs-popup/dist/index.css";
 
 const SettingsPopup = ({ alertDisplayed, setAlertDisplayed, setShuffle }) => {
   const [popupType, setPopupType] = useState(""); // shuffle, multiselect, upload, wall-settings
@@ -12,7 +12,7 @@ const SettingsPopup = ({ alertDisplayed, setAlertDisplayed, setShuffle }) => {
     <Popup
       trigger={
         <button className="settings-button" disabled={alertDisplayed}>
-          <GiHamburgerMenu color="black"/>
+          <GiHamburgerMenu color="black" />
         </button>
       }
       position="bottom"
