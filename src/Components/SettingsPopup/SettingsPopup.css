@@ -1,6 +1,6 @@
 .settings-button {
   position: absolute;
-  right: 1%;
+  right: 2%;
   top: 10%;
   transform: translateY(-50%);
   border-width: 0px;
@@ -36,9 +36,9 @@
   margin-bottom: 4.5px;
 }
 
-.sidebar-button-disabled {
+/* .sidebar-button-disabled {
   background-color: #5d8f8f;
-}
+} */
 
 .sidebar-icon {
   color: #2A7676;

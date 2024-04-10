@@ -10,7 +10,7 @@ body {
 .back-button {
   position: absolute;
   top: 10%;
-  left: 1%;
+  left: 2%;
   transform: translateY(-50%);
   border-width: 0px;
   background-color: transparent;
