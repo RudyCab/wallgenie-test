@@ -14,6 +14,13 @@ const ProjectTitle = ({ alertDisplayed }) => {
   const handleTitleClick = () => {
     if (!alertDisplayed) {
       setIsEditing(true); // enable editing mode
+
+      // fixed weird bug where clicking title reverts theme color
+      let themeColor = "#ffffff";
+      const metaTag = document.querySelector("#theme-color-meta");
+      if (metaTag) {
+        metaTag.setAttribute("content", themeColor);
+      }
     }
   };
 

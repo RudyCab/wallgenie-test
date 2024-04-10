@@ -31,5 +31,7 @@
 
 .sidebar-icon {
   color: white;
-  /* font-size: 2em; */
+  font-size: 1.3em;
+  padding-bottom: 2px;
+  padding-right: 2px;
 }
