@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import { IoIosArrowBack } from "react-icons/io";
-import { FaCircle } from "react-icons/fa";
 import SettingsPopup from "../Components/SettingsPopup/SettingsPopup";
 import WallComponent from "../Components/Wall/WallComponent";
 import ProjectTitle from "../Components/ProjectTitle/ProjectTitle";
@@ -14,9 +13,11 @@ import "./WallEditorPage.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 function WallEditorPage({ images }) {
-  useEffect(() => {
-    document.body.style.backgroundColor = "#ffffff";
-  }, []);
+  let themeColor = "#ffffff";
+  const metaTag = document.querySelector("#theme-color-meta");
+  if (metaTag) {
+    metaTag.setAttribute("content", themeColor);
+  }
 
   const [shuffle, setShuffle] = useState(false);
 
@@ -47,9 +48,8 @@ function WallEditorPage({ images }) {
   /*
   Create new `Wall` instance
   */
-  const VERTICAL_OFFSET = wall_width !== MAX_WIDTH ? -60 : -15; // adjust offset based on if user's on phone vs laptop
   const wall = new Wall(
-    { x: x, y: window.innerHeight * 0.175 + VERTICAL_OFFSET },
+    { x: x, y: window.innerHeight * 0.2 - 20 },
     {
       width: wall_width,
       height: (3 / 4) * wall_width,
@@ -73,14 +73,14 @@ function WallEditorPage({ images }) {
         onClick={() => setWallColor(color)}
         style={{ backgroundColor: color }}
       >
-        <FaCircle style={{ color }} />
+        <span style={{ color: color }}>.</span>
       </Dropdown.Item>
     );
   };
 
   const dropdownButtonStyle = {
     position: "fixed",
-    top: wall.coordinates.y + wall.size.height + 10,
+    top: wall.coordinates.y - 42.5,
     left: "50%",
     transform: "translateX(-50%)",
   };
@@ -102,10 +102,7 @@ function WallEditorPage({ images }) {
 
   return (
     <div className="wallEditor">
-      <div
-        className="page-container"
-        style={{ pointerEvents: "auto" }}
-      >
+      <div className="page-container" style={{ pointerEvents: "auto" }}>
         <div ref={parentRef} className="top-row">
           <button
             className="back-button"
@@ -121,10 +118,6 @@ function WallEditorPage({ images }) {
             setShuffle={setShuffle}
           />
         </div>
-        <div style={{ height: "350px" }}>
-          {/* RENDER WALL COMPONENT */}
-          <WallComponent wall={wall} wallColor={wallColor} />
-        </div>
 
         {/* WALL COLOR DROPDOWN MENU */}
         <div className="dropdown-container" style={dropdownButtonStyle}>
@@ -137,6 +130,11 @@ function WallEditorPage({ images }) {
               </div>
             </DropdownButton>
           )}
+        </div>
+
+        {/* RENDER WALL COMPONENT */}
+        <div className="wall-component-container" style={{ height: "350px" }}>
+          <WallComponent wall={wall} wallColor={wallColor} />
         </div>
 
         {__DISPLAY_SLIDER && (

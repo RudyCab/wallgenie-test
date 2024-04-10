@@ -1,6 +1,6 @@
 .settings-button {
   position: absolute;
-  right: 5%;
+  right: 1%;
   top: 10%;
   transform: translateY(-50%);
   border-width: 0px;
@@ -26,11 +26,11 @@
 }
 
 .sidebar-button-disabled {
-  /* make buttons have a lighter color than default */
   background-color: #5d8f8f;
 }
 
 .sidebar-icon {
   color: white;
   font-size: 2em;
+  transform: translate(-5%, 0%);
 }

@@ -11,6 +11,7 @@ const Slider = ({ images, shuffle, setShuffle }) => {
             images.map((imageUrl, index) => (
               <Draggable
                 img={imageUrl}
+                key={index}
                 alt={`Image ${index + 1}`}
                 className="image"
                 shuffle={shuffle}

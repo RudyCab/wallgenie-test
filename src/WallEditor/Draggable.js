@@ -15,9 +15,9 @@ class Drag extends React.Component {
   }
 
   handleStop = (e, data) => {
-    console.log("Mouse up event occurred!");
+    // console.log("Mouse up event occurred!");
     if (e.clientX < 10 || e.clientY < 100 || e.clientY > 300) {
-      console.log("inside if");
+      // console.log("inside if");
       this.setState((prevState) => ({
         top: 0,
         left: 0,
@@ -29,8 +29,8 @@ class Drag extends React.Component {
         left: data.lastX,
       }));
     }
-    console.log(e.clientX);
-    console.log(e.clientY);
+    // console.log(e.clientX);
+    // console.log(e.clientY);
   };
 
   handleShuffle = () => {
@@ -50,21 +50,21 @@ class Drag extends React.Component {
   };
 
   handleMouseMove = (e) => {
-    console.log("hi");
+    // console.log("hi");
     this.setState(
       (prevState) => ({
         dragging: true,
         mouseStart: { x: e.offsetX, y: e.offsetY },
       }),
       () => {
-        console.log("move");
-        console.log("dragging " + this.state.dragging);
+        // console.log("move");
+        // console.log("dragging " + this.state.dragging);
         if (this.state.dragging === true) {
           const pixelDifference = Math.max(
             this.state.mouseStart.x - e.offsetX,
             this.state.mouseStart.y - e.offsetY
           );
-          console.log(pixelDifference);
+          // console.log(pixelDifference);
           this.setState((prevState) => ({
             height: this.state.height + pixelDifference,
             width: this.state.width + pixelDifference,
@@ -76,7 +76,7 @@ class Drag extends React.Component {
   };
 
   handleMouseUp = (e) => {
-    console.log("up");
+    // console.log("up");
     this.setState((prevState) => ({
       dragging: false,
     }));
@@ -96,9 +96,9 @@ class Drag extends React.Component {
         onStop={this.handleStop}
       >
         <div>
-          {console.log("top is" + this.state.top)}
-          {console.log("left is" + this.state.left)}
-          {console.log(this.props.shuffle)}
+          {/* {console.log("top is" + this.state.top)} */}
+          {/* {console.log("left is" + this.state.left)} */}
+          {/* {console.log(this.props.shuffle)} */}
           {this.props.shuffle && this.handleShuffle()}
           <div>
             {/* <button style={{height: '10px', width:80, fontSize:'8px'}} onClick={() => {

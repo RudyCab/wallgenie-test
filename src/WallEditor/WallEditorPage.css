@@ -10,7 +10,7 @@ body {
 .back-button {
   position: absolute;
   top: 10%;
-  left: 5%;
+  left: 1%;
   transform: translateY(-50%);
   border-width: 0px;
   background-color: transparent;
@@ -26,5 +26,5 @@ body {
 
 .dropdown-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-columns: repeat(6, 1fr);
 }
