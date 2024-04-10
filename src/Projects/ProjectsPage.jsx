@@ -1,62 +1,52 @@
-import React, { useEffect } from 'react';
-import './ProjectPage.css'; 
+import React, { useEffect } from "react";
+import "./ProjectPage.css";
 
 import { FaFolder } from "react-icons/fa";
-import { PiFolderPlus } from "react-icons/pi";
+import { RiFolderAddFill } from "react-icons/ri";
 
 function ProjectPage() {
   useEffect(() => {
-    document.body.style.backgroundColor = '#215F5F'; 
+    document.body.style.backgroundColor = "#215F5F";
     return () => {
-      document.body.style.backgroundColor = '';
+      document.body.style.backgroundColor = "";
     };
   }, []);
-  
+
   return (
     <div>
-      <div className='TopHeader'>
+      <div className="TopHeader">
         <div className="projectText">
           <p>Projects</p>
         </div>
         <div className="buttonContainer">
-          <button className="button">Select</button>
-            <PiFolderPlus size={40}/>
+          {/* <button className="button">Select</button> */}
+          <RiFolderAddFill className="button-icon" />
         </div>
       </div>
-
 
       <div className="folderGrid-container">
         <ul className="folderGrid">
           <li className="folder">
             <FaFolder size={75} className="folder-icon" />
-            <div className="folder-text">
-              <span>Favorites</span>
-            </div>
+            <div className="folder-text">Favorites</div>
           </li>
 
           <li className="folder">
             <FaFolder size={75} className="folder-icon" />
-            <div className="folder-text">
-              <span>Coquette</span>
-            </div>
-          </li>     
+            <div className="folder-text">Coquette</div>
+          </li>
 
           <li className="folder">
             <FaFolder size={75} className="folder-icon" />
-            <div className="folder-text">
-              <span>Minimalist</span>
-            </div>
-          </li>  
+            <div className="folder-text">Minimalist</div>
+          </li>
           <li className="folder">
             <FaFolder size={75} className="folder-icon" />
-            <div className="folder-text">
-              <span>Plant Mom</span>
-            </div>
-          </li>  
+            <div className="folder-text">Plant Mom</div>
+          </li>
         </ul>
-       </div>
+      </div>
     </div>
-
   );
 }
 

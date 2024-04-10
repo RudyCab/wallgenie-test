@@ -1,0 +1,12 @@
+.image-container {
+  position: absolute;
+  margin-top: 175px;
+  width: 100%;
+  height: 100%;
+  /* todo- we need to make it scrollable, but once dragged an image allow the image to leave the slider container */
+  /* overflow-y: auto; */
+}
+
+.image {
+  position: relative;
+}

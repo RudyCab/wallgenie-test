@@ -69,7 +69,7 @@ const SidePanel = ({ wall, wallColor, side }) => {
   const darkenedWallColor = darkenColor(wallColor, 25);
 
   const ARBITRARY_LARGE_VAL = 100;
-  let myPadding = PADDING > ARBITRARY_LARGE_VAL ? 50 : PADDING; // clips side panels if viewing on laptop
+  let myPadding = PADDING > ARBITRARY_LARGE_VAL ? 35 : PADDING; // clips side panels if viewing on laptop
 
   const left = side === "left" ? x - myPadding : x + width; // x-coordinate for rect and triangle subcomponents
   const gradientDirection = side === "left" ? "right" : "left";

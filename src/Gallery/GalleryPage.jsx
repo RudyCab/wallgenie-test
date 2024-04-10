@@ -45,9 +45,9 @@ function GalleryPage({ importedImages, setImportedImages }) {
       <div className="TopHeader">
         <p className="galleryText">Gallery</p>
         <span className="buttonContainer">
-          <button className="buttonSelect">Select</button>
+          {/* <button className="buttonSelect">Select</button> */}
           <label htmlFor="file-input">
-            <MdAddPhotoAlternate size={40} className="iconButton" />
+            <MdAddPhotoAlternate className="iconButton" />
             {/* Hidden file input to trigger file selection */}
             <input
               id="file-input"

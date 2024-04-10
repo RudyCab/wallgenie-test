@@ -58,7 +58,6 @@ const ProjectTitle = ({ alertDisplayed }) => {
           style={{
             color: title_color,
             fontWeight: "bold",
-            textDecoration: "underline",
           }}
         >
           {projectTitle.length > MAX_VISIBLE_CHARS

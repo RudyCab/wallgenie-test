@@ -1,18 +1,17 @@
 import React, { useState, useRef } from "react";
-import SettingsPopup from "../Components/SettingsPopup/SettingsPopup";
-import WallComponent from "../Components/Wall/WallComponent";
-import ProjectTitle from "../Components/ProjectTitle/ProjectTitle";
-import Draggable from "./Draggable";
-import "./WallEditorPage.css";
-import "bootstrap/dist/css/bootstrap.css";
-import { Wall } from "../Structs/Wall";
-import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
+import { IoIosArrowBack } from "react-icons/io";
 import { FaCircle } from "react-icons/fa";
-import { IoIosAddCircleOutline } from "react-icons/io";
+import SettingsPopup from "../Components/SettingsPopup/SettingsPopup";
+import WallComponent from "../Components/Wall/WallComponent";
+import ProjectTitle from "../Components/ProjectTitle/ProjectTitle";
+import Slider from "./Slider";
+import { Wall } from "../Structs/Wall";
 import Colors from "./Colors";
+import "./WallEditorPage.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 function WallEditorPage({ images }) {
   const [shuffle, setShuffle] = useState(false);
@@ -31,7 +30,7 @@ function WallEditorPage({ images }) {
 
   // Wall Constants
   let PADDING = 17.5;
-  const MAX_WIDTH = 500;
+  const MAX_WIDTH = 350;
 
   const wall_width = Math.min(window.innerWidth - 2 * PADDING, MAX_WIDTH);
 
@@ -94,8 +93,8 @@ function WallEditorPage({ images }) {
     Colors.LIGHTGRAY,
     Colors.GRAY,
     Colors.TAN,
-    Colors.BLACK,
     Colors.BROWN,
+    Colors.BLACK,
   ];
 
   return (
@@ -120,10 +119,11 @@ function WallEditorPage({ images }) {
           />
         </div>
         <div style={{ height: "350px" }}>
+          {/* RENDER WALL COMPONENT */}
           <WallComponent wall={wall} wallColor={wallColor} />
         </div>
 
-        {/* WALL COLOR DROPDOWN */}
+        {/* WALL COLOR DROPDOWN MENU */}
         <div className="dropdown-container" style={dropdownButtonStyle}>
           {!alertDisplayed && (
             <DropdownButton drop="up-centered" title="Wall Color" variant="n/a">
@@ -136,23 +136,9 @@ function WallEditorPage({ images }) {
           )}
         </div>
 
-        <div
-          style={{ height: "10px", width: "100%", background: "#215F5F" }}
-        ></div>
-        <div className="row image-container" style={{ height: "100%" }}>
-          <div class="col">
-            {images &&
-              images.map((imageUrl, index) => (
-                <Draggable
-                  img={imageUrl}
-                  alt={`Image ${index + 1}`}
-                  className="image"
-                  shuffle={shuffle}
-                  setShuffle={setShuffle}
-                />
-              ))}
-          </div>
-        </div>
+        {__DISPLAY_SLIDER && (
+          <Slider images={images} shuffle={shuffle} setShuffle={setShuffle} />
+        )}
       </div>
     </div>
   );

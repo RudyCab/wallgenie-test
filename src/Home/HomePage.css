@@ -1,24 +1,24 @@
 .homepage-buttons {
-    position: relative;
-    background-color: #FDCE78;
-    color: #164343;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    border-radius: 75px;
-    padding: 10px 20px; 
-    cursor: pointer; 
-    transition: background-color 0.3s ease;
-    font-size: 18px;
-    margin-top: 25px;
+  position: relative;
+  background-color: #f5c873;
+  color: #164343;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+  border-radius: 20px;
+  padding: 5px 10px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease;
+  font-size: 20px;
+  margin-top: 25px;
 }
 
 .homepage-button-container {
-    text-align: center; 
-    margin: -100px auto 0; 
+  text-align: center; 
+  margin: -100px auto 0; 
 }
 
 img {
-    display: block;
-    margin: 140px auto 0; 
-    width: 90%;
+  display: block;
+  margin: 140px auto 0; 
+  width: 325px;
 }
