@@ -22,8 +22,9 @@ const Slider = ({ images, shuffle, setShuffle }) => {
         </div>
       </div>
       {/* SLIDER BACKGROUND */}
-      <span className="slider-title">Decor Gallery</span>
-      <div className="slider-background" />
+      <div className="slider-background">
+        <span id="slider-title">Decor Gallery</span>
+      </div>
     </>
   );
 };
