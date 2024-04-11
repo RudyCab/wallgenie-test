@@ -13,6 +13,8 @@ import Colors from "./Colors";
 import "./WallEditorPage.css";
 import "bootstrap/dist/css/bootstrap.css";
 
+const __DISPLAY_SLIDER = true; // for debugging purposes
+
 function WallEditorPage({ images }) {
   // updates background color behind iPhone top notch
   let themeColor = "#ffffff";
@@ -31,8 +33,6 @@ function WallEditorPage({ images }) {
   const handleBackButtonClick = () => {
     navigate(-1);
   };
-
-  const __DISPLAY_SLIDER = false; // for debugging purposes
 
   /*
   Initialize info for WallComponent
@@ -147,7 +147,7 @@ function WallEditorPage({ images }) {
             drop="up-centered"
             title="Wall Color"
             variant="n/a"
-            disabled={alertDisplayed}
+            hidden={alertDisplayed}
             onToggle={(isOpen) => {
               if (!isOpen) {
                 setShowColorPicker(false);
@@ -181,6 +181,7 @@ function WallEditorPage({ images }) {
             id="HexColorPicker"
             color={wallColor}
             onChange={handleOnCustomColorChange}
+            hidden={alertDisplayed}
           />
         )}
 

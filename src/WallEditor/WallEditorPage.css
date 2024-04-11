@@ -7,18 +7,18 @@ body {
   margin-top: -25px;
 }
 
-.icon-enabled {
+.top-row-icon-enabled {
   color: black;
 }
 
-.icon-disabled {
+.top-row-icon-disabled {
   color: #00000065;
 }
 
 .back-button {
   position: absolute;
   top: 10%;
-  left: 2%;
+  left: 1.25%;
   transform: translateY(-50%);
   border-width: 0px;
   background-color: transparent;
@@ -42,5 +42,5 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -100%);
+  transform: translate(-50%, -75%);
 }

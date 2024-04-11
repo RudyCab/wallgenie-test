@@ -1,5 +1,5 @@
 // Sidebar Icons
-import { IoShuffle } from "react-icons/io5";
+import { TiArrowShuffle } from "react-icons/ti";
 // import { LuLassoSelect } from "react-icons/lu";
 import { RiImageAddFill } from "react-icons/ri";
 // import { IoCameraOutline } from "react-icons/io5";
@@ -14,7 +14,7 @@ const Sidebar = ({
   setShuffle,
 }) => {
   const types = ["shuffle", "upload", "spotlight"];
-  const icons = [IoShuffle, RiImageAddFill, SiSpotlight];
+  const icons = [TiArrowShuffle, RiImageAddFill, SiSpotlight];
 
   const handleOnClick = (type) => {
     if (type == 0) {
@@ -41,7 +41,7 @@ const Sidebar = ({
                   ? "sidebar-icon-disabled"
                   : "sidebar-icon-enabled"
               }
-              size={35}
+              size={26}
             />
           </button>
         ))}
