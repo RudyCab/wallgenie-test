@@ -6,6 +6,7 @@ const Slider = ({ images, shuffle, setShuffle }) => {
   return (
     <>
       <div className="image-container">
+        {/* Defines where DecorItems are first rendered on the WallEditorPAge */}
         <div className="col">
           {images &&
             images.map((imageUrl, index) => (
@@ -21,15 +22,8 @@ const Slider = ({ images, shuffle, setShuffle }) => {
         </div>
       </div>
       {/* SLIDER BACKGROUND */}
-      <div
-        style={{
-          marginTop: 135,
-          height: 385,
-          width: "100%",
-          background: "#265d5e",
-          boxShadow: "inset 0 0 20px #0000002a",
-        }}
-      />
+      <span className="slider-title">Decor Gallery</span>
+      <div className="slider-background" />
     </>
   );
 };

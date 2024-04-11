@@ -12,6 +12,7 @@ function HomePage() {
     };
   }, []);
 
+  // updates background color behind iPhone top notch
   let themeColor = "#215F5F";
   const metaTag = document.querySelector("#theme-color-meta");
   if (metaTag) {
