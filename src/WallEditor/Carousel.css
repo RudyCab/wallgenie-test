@@ -1,8 +1,7 @@
 .DecorItem-Container {
-  display: flex;
   position: absolute;
-  margin-top: 200px;
-  width: 100%;
+  margin-top: 210px;
+  width: 91%;
   height: 325px;
 }
 
@@ -16,7 +15,6 @@
 .DecorItem-Grid li {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .DecorItem {
@@ -44,12 +42,10 @@
 
 .Carousel-Left {
   left: 0;
-  transform: translate(75%);
 }
 
 .Carousel-Right { 
   right: 0;
-  transform: translate(-75%);
 }
 
 .Carousel-Title {
@@ -57,11 +53,11 @@
   left: 50%;
   transform: translate(-50%, 50%);
   color: #FDCE78;
-  background-color: #265d5e;
+  /* background-color: #265d5e; */
   font-weight: bolder;
   padding-left: 10px;
   padding-right: 10px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   font-size: large;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
