@@ -1,0 +1,67 @@
+.DecorItem-Container {
+  display: flex;
+  position: absolute;
+  margin-top: 200px;
+  width: 100%;
+  height: 325px;
+}
+
+.DecorItem-Grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+  list-style-type: none;
+}
+
+.DecorItem-Grid li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.DecorItem {
+  position: relative;
+}
+
+.Carousel-Container {
+  margin-top: 145px;
+  height: 395px;
+  width: 100.5%;
+  border-radius: 25px;
+  background: #265d5e;
+  box-shadow:
+    0 0 7.5px #0000005f,
+    inset 0 0 10px #3f7676d2;
+}
+
+.Carousel-Button {
+  position: absolute;
+  background-color: transparent;
+  border-width: 0px;
+  font-size: xx-large;
+  font-size: xx-large;
+}
+
+.Carousel-Left {
+  left: 0;
+  transform: translate(75%);
+}
+
+.Carousel-Right { 
+  right: 0;
+  transform: translate(-75%);
+}
+
+.Carousel-Title {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  color: #FDCE78;
+  background-color: #265d5e;
+  font-weight: bolder;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  font-size: large;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

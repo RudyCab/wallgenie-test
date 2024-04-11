@@ -6,13 +6,13 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import { IoIosArrowBack, IoMdAdd, IoMdClose } from "react-icons/io";
 import SettingsPopup from "../Components/SettingsPopup/SettingsPopup";
 import WallComponent from "../Components/Wall/WallComponent";
-import Slider from "./Slider";
+import Carousel from "./Carousel";
 import { Wall } from "../Structs/Wall";
 import Colors from "./Colors";
 import "./WallEditorPage.css";
 import "bootstrap/dist/css/bootstrap.css";
 
-const __DISPLAY_SLIDER = true; // for debugging purposes
+const __DISPLAY_CAROUSEL = true; // for debugging purposes
 
 function WallEditorPage({ images }) {
   // updates background color behind iPhone top notch
@@ -184,9 +184,9 @@ function WallEditorPage({ images }) {
           />
         )}
 
-        {/* SLIDER (where DecorItems are displayed) */}
-        {__DISPLAY_SLIDER && (
-          <Slider images={images} shuffle={shuffle} setShuffle={setShuffle} />
+        {/* CAROUSEL (where DecorItems are displayed) */}
+        {__DISPLAY_CAROUSEL && (
+          <Carousel images={images} shuffle={shuffle} setShuffle={setShuffle} />
         )}
       </div>
     </div>
@@ -204,12 +204,12 @@ const ProjectTitle = ({ alertDisplayed }) => {
     if (!alertDisplayed) {
       setIsEditing(true); // enable editing mode
 
-      // fixed weird bug where clicking title reverts theme color
-      // let themeColor = "#ffffff";
-      // const metaTag = document.querySelector("#theme-color-meta");
-      // if (metaTag) {
-      //   metaTag.setAttribute("content", themeColor);
-      // }
+      // updates background color behind iPhone top notch
+      let themeColor = "#ffffff";
+      const metaTag = document.querySelector("#theme-color-meta");
+      if (metaTag) {
+        metaTag.setAttribute("content", themeColor);
+      }
     }
   };
 
@@ -222,6 +222,13 @@ const ProjectTitle = ({ alertDisplayed }) => {
     if (projectTitle.trim() === "") {
       // ensure that if user types an empty title, it'll defaul to "Untitled"
       setProjectTitle("Untitled");
+    }
+
+    // updates background color behind iPhone top notch
+    let themeColor = "#ffffff";
+    const metaTag = document.querySelector("#theme-color-meta");
+    if (metaTag) {
+      metaTag.setAttribute("content", themeColor);
     }
   };
 
