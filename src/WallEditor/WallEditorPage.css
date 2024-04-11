@@ -43,4 +43,5 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -75%);
+  z-index: 9999; /* ensures HexColorPicker is displayed above any DecorItems */
 }

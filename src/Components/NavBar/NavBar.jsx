@@ -24,8 +24,10 @@ function NavBar() {
             <FaImage size={30 * ICON_MULTIPLIER} />
           </Link>
         </li>
-        <li className={location.pathname === "/wallgenie-test" ? "active" : ""}>
-          <Link to="/wallgenie-test">
+        <li
+          className={location.pathname === "/wallgenie-test/" ? "active" : ""}
+        >
+          <Link to="/wallgenie-test/">
             <AiFillHome size={33.5 * ICON_MULTIPLIER} />
           </Link>
         </li>
