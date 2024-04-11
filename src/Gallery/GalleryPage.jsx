@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { MdAddPhotoAlternate } from "react-icons/md";
 import GalleryGrid from "../Components/GalleryGrid/GalleryGrid";
 import "./GalleryPage.css";
@@ -17,6 +18,23 @@ function GalleryPage({ importedImages, setImportedImages }) {
       document.body.style.backgroundColor = "";
     };
   }, []);
+
+  /*
+  If user refreshes the site, segue to '/wallgenie-test/' (homepage)
+  before the refresh occurs. This is needed to avoid GitHub Pages
+  error when user refreshes the site when they're not on the homepage
+  */
+  const navigate = useNavigate();
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+      navigate("/wallgenie-test/");
+      event.preventDefault();
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, [navigate]);
 
   let themeColor = "#215F5F";
   const metaTag = document.querySelector("#theme-color-meta");
