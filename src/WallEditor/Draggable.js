@@ -1,6 +1,5 @@
 import Draggable from "react-draggable";
 import React, { useState, useRef, useEffect } from "react";
-import { FaRandom } from "react-icons/fa";
 
 class Drag extends React.Component {
   constructor(props) {
@@ -14,10 +13,9 @@ class Drag extends React.Component {
     };
   }
 
-  handleStop = (e, data) => {
-    // console.log("Mouse up event occurred!");
-    if (e.clientX < 10 || e.clientY < 100 || e.clientY > 300) {
-      // console.log("inside if");
+  handleStop = (event, data) => {
+    // if its out of bounds, pop back to og position
+    if (Math.abs(data.x) < this.props.xWall || Math.abs(data.y) < this.props.yWall || Math.abs(data.y) > this.props.yWall + this.props.heightWall) {
       this.setState((prevState) => ({
         top: 0,
         left: 0,
@@ -29,61 +27,21 @@ class Drag extends React.Component {
         left: data.lastX,
       }));
     }
-    // console.log(e.clientX);
-    // console.log(e.clientY);
   };
 
   handleShuffle = () => {
-    if (this.state.top !== 0 && this.state.left != 0) {
-      this.setState((prevState) => ({
-        // top: Math.random() * (300 - 100) + 100,
-        // left: Math.random() * (300 - 10) + 10
-        top:
-          this.state.top +
-          (Math.random() * (100 - 20) + 20) * (Math.random() * (1 + 1) - 1),
-        left:
-          this.state.left +
-          (Math.random() * (100 - 20) + 20) * (Math.random() * (1 + 1) - 1),
-      }));
-    }
-    this.props.setShuffle(false);
-  };
-
-  handleMouseMove = (e) => {
-    // console.log("hi");
-    this.setState(
-      (prevState) => ({
-        dragging: true,
-        mouseStart: { x: e.offsetX, y: e.offsetY },
-      }),
-      () => {
-        // console.log("move");
-        // console.log("dragging " + this.state.dragging);
-        if (this.state.dragging === true) {
-          const pixelDifference = Math.max(
-            this.state.mouseStart.x - e.offsetX,
-            this.state.mouseStart.y - e.offsetY
-          );
-          // console.log(pixelDifference);
-          this.setState((prevState) => ({
-            height: this.state.height + pixelDifference,
-            width: this.state.width + pixelDifference,
-            mouseStart: { x: e.offsetX, y: e.offsetY },
-          }));
-        }
-      }
-    );
-  };
-
-  handleMouseUp = (e) => {
-    // console.log("up");
+  if (this.state.top !== 0 && this.state.left !== 0) {
     this.setState((prevState) => ({
-      dragging: false,
+      // randomly calculate an x and y value that are within their respective bounds
+      top: -1 * ((Math.random() * this.props.heightWall) + this.props.yWall),
+      left: Math.random() * this.props.widthWall
     }));
-  };
+  }
+  this.props.setShuffle(false);
+};
+
 
   render() {
-    // function Drag(props) {
     return (
       <Draggable
         axis="both"
@@ -96,9 +54,6 @@ class Drag extends React.Component {
         onStop={this.handleStop}
       >
         <div>
-          {/* {console.log("top is" + this.state.top)} */}
-          {/* {console.log("left is" + this.state.left)} */}
-          {/* {console.log(this.props.shuffle)} */}
           {this.props.shuffle && this.handleShuffle()}
           <div>
             {/* <button style={{height: '10px', width:80, fontSize:'8px'}} onClick={() => {
@@ -110,7 +65,7 @@ class Drag extends React.Component {
             <img
               src={this.props.img}
               className="handle"
-              style={{ height: this.state.height, width: this.state.width }}
+              style={{ height: this.state.height, width: this.state.width, top: this.state.top, left: this.state.left }}
             />
             {/* <div className="handle" style={{backgroundImage: require("" + this.props.img), backgroundSize:'contain', width:100, height:100}}></div> */}
           </div>
@@ -120,5 +75,36 @@ class Drag extends React.Component {
     );
   }
 }
+
+
+// handleMouseMove = (e) => {
+//   // console.log("hi");
+//   this.setState(
+//     (prevState) => ({
+//       dragging: true,
+//       mouseStart: { x: e.offsetX, y: e.offsetY },
+//     }),
+//     () => {
+
+//       if (this.state.dragging === true) {
+//         const pixelDifference = Math.max(
+//           this.state.mouseStart.x - e.offsetX,
+//           this.state.mouseStart.y - e.offsetY
+//         );
+//         this.setState((prevState) => ({
+//           height: this.state.height + pixelDifference,
+//           width: this.state.width + pixelDifference,
+//           mouseStart: { x: e.offsetX, y: e.offsetY },
+//         }));
+//       }
+//     }
+//   );
+// };
+
+// handleMouseUp = (e) => {
+//   this.setState((prevState) => ({
+//     dragging: false,
+//   }));
+// };
 
 export default Drag;

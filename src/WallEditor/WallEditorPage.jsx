@@ -186,7 +186,9 @@ function WallEditorPage({ images }) {
 
         {/* CAROUSEL (where DecorItems are displayed) */}
         {__DISPLAY_CAROUSEL && (
-          <Carousel images={images} shuffle={shuffle} setShuffle={setShuffle} />
+          <Carousel images={images} shuffle={shuffle} setShuffle={setShuffle} 
+          xWall={x} yWall={window.innerHeight * 0.25 - 20} 
+          heightWall={(3 / 4) * wall_width} widthWall={wall_width}/>
         )}
       </div>
     </div>

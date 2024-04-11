@@ -10,7 +10,7 @@ import {
 /*
 Now, acting as a carousel rather than a scrollable slider
 */
-const Carousel = ({ images, shuffle, setShuffle }) => {
+const Carousel = ({ images, shuffle, setShuffle, xWall, yWall, heightWall, widthWall }) => {
   const ITEMS_PER_PANEL = 6;
   const [currentPanelIndex, setCurrentPanelIndex] = useState(0);
   const [currentImages, setCurrentImages] = useState([]);
@@ -52,6 +52,10 @@ const Carousel = ({ images, shuffle, setShuffle }) => {
                   className="DecorItem"
                   shuffle={shuffle}
                   setShuffle={setShuffle}
+                  xWall={xWall}
+                  yWall={yWall}
+                  heightWall={heightWall}
+                  widthWall={widthWall}
                 />
               </li>
             ))}
