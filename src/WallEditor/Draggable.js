@@ -59,8 +59,8 @@ class Drag extends React.Component {
 
   resizeImg = (e) => {
     this.setState((prevState) => ({
-      width: e.target.offsetWidth,
-      height: e.target.offsetHeight,
+      width: e.clientx || e.touches[0].clientX,
+      height: e.clientY || e.touches[0].clientY,
     }));
   };
 

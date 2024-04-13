@@ -78,7 +78,7 @@ const Carousel = ({
           />
         </button>
         <button
-          className="Carousel-Button Carousel-Right"
+          className="Carousel-Button Carousel-Right" 
           onClick={handleNextPanel}
         >
           <MdOutlineKeyboardArrowRight
