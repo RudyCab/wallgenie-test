@@ -59,10 +59,39 @@ class Drag extends React.Component {
 
   resizeImg = (e) => {
     this.setState((prevState) => ({
-      width: e.clientx || e.touches[0].clientX,
+      width: e.clientX || e.touches[0].clientX,
       height: e.clientY || e.touches[0].clientY,
     }));
   };
+
+  mouseDown = () => {
+    this.setState((prevState) => ({
+      dragging: true
+    }));
+  }
+
+    mouseMove = (e) => {
+      if (this.state.dragging) {
+        // get rectangle which contains this element
+        const bound = e.target.getBoundingClientRect();
+        // calculate offset from mouse to bounding rectangle
+        const mouseX = e.clientX || e.touches[0].clientX;
+        const mouseY = e.clientY || e.touches[0].clientY;
+        const offsetX = mouseX - bound.left;
+        const offsetY = mouseY - bound.top;
+        this.setState((prevState) => ({
+          width: offsetX,
+          height: offsetY 
+        }));
+      }
+    }
+  
+
+  mouseUp = () => {
+    this.setState((prevState) => ({
+      dragging: false
+    }));
+  }
 
   render() {
     return (
@@ -80,12 +109,12 @@ class Drag extends React.Component {
           {this.props.shuffle && this.handleShuffle()}
           <div
             style={{
-              resize: "both",
+              // resize: "both",
               height: this.state.height,
               width: this.state.width,
-              overflow: "auto",
+              // overflow: "auto",
             }}
-            onResize={this.resizeImg}
+            // onResize={this.resizeImg}
           >
             {/* <button style={{height: '10px', width:80, fontSize:'8px'}} onClick={() => {
             this.setState(prevState => ({
@@ -103,6 +132,14 @@ class Drag extends React.Component {
                 left: this.state.left,
               }}
             />
+            <button style={{backgroud:"purple", height:'20', weight: '20'}}
+                        onMouseDown={this.mouseDown}
+                        onMouseMove={this.mouseMove}
+                        onMouseUp={this.mouseUp}
+                        onTouchStart={this.mouseDown}
+                        onTouchMove={this.mouseMove}
+                        onTouchEnd={this.mouseUp}
+            >resize</button>
           </div>
         </div>
       </Draggable>
