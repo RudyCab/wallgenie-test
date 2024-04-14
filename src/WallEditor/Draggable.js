@@ -51,7 +51,7 @@ class Drag extends React.Component {
       this.setState((prevState) => ({
         // randomly calculate an x and y value that are within their respective bounds
         top: -1 * (Math.random() * this.props.heightWall + this.props.yWall),
-        left: Math.random() * this.props.widthWall,
+        left: (Math.random() * (this.props.widthWall - this.state.width)),
       }));
     }
     this.props.setShuffle(false);
