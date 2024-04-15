@@ -29,10 +29,18 @@ class Drag extends React.Component {
 
   handleStop = (event, data) => {
     // if its out of bounds, pop back to og position
+    console.log(this.props.xWall)
+    console.log(data.x)
+    console.log(Math.abs(data.y))
+    console.log(this.props.yWall)
+    console.log(this.props.heightWall + this.props.heightWall)
+    console.log(Math.abs(data.x) < 0)
+    console.log(Math.abs(data.y) < (this.props.yWall))
+    console.log(Math.abs(data.y) > (this.props.heightWall + this.props.heightWall))
     if (
-      Math.abs(data.x) < this.props.xWall ||
+      Math.abs(data.x) < 0 ||
       Math.abs(data.y) < this.props.yWall ||
-      Math.abs(data.y) > this.props.yWall + this.props.heightWall
+      Math.abs(data.y) > (this.props.yWall + this.props.heightWall)
     ) {
       this.setState((prevState) => ({
         top: 0,

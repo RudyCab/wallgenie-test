@@ -40,6 +40,39 @@ const Sidebar = ({
     <>
       <div className="sidebar-container">
         {icons.map((Icon, index) => (
+          // index === 1 ? 
+          //   (
+          //   <span className="buttonContainer">
+          //     <label htmlFor="file-input">
+          //   <input
+          //   id="file-input"
+          //   type="file"
+          //   accept="image/*"
+          //   multiple
+          //   style={{ display: "none" }}
+          //   onChange={(e) => handleOnChange(Array.from(e.target.files))}
+          // />
+          // </label>
+          // </span>
+          // ) : 
+          // (
+          //   <button
+          //   key={index}
+          //   className={"sidebar-button"}
+          //   onClick={(e) => handleOnClick(e, index)}
+          //   disabled={alertDisplayed}
+          // >
+          //   <Icon
+          //     className={
+          //       alertDisplayed
+          //         ? "sidebar-icon-disabled"
+          //         : "sidebar-icon-enabled"
+          //     }
+          //     size={26}
+          //   />
+          // </button>
+          // )
+
           <button
             key={index}
             className={"sidebar-button"}
@@ -54,14 +87,6 @@ const Sidebar = ({
               }
               size={26}
             />
-            {index === 1 && <input
-              id="file-input"
-              type="file"
-              accept="image/*"
-              multiple
-              style={{ display: "none" }}
-              onChange={(e) => handleOnChange(Array.from(e.target.files))}
-            />}
           </button>
         ))}
       </div>
