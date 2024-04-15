@@ -133,7 +133,7 @@ class Drag extends React.Component {
                 left: this.state.left,
               }}
             />
-            <button style={{height:1, width:1, fontSize:8, background:'none', border:'none', float:'right', paddingTop:0}}
+            <button style={{height:'1px', width:'1px', fontSize:'8px', background:'none', border:'none', float:'right', paddingTop:0}}
                         onMouseDown={this.mouseDown}
                         onMouseMove={this.mouseMove}
                         onMouseUp={this.mouseUp}
