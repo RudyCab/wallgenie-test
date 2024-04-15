@@ -15,7 +15,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 const __DISPLAY_CAROUSEL = true; // for debugging purposes
 
-function WallEditorPage({ images }) {
+function WallEditorPage({ images, wallEditorImportClicked, setWallEditorImportClicked}) {
   // updates background color behind iPhone top notch
   let themeColor = "#ffffff";
   const metaTag = document.querySelector("#theme-color-meta");
@@ -130,6 +130,8 @@ function WallEditorPage({ images }) {
             alertDisplayed={alertDisplayed}
             setAlertDisplayed={setAlertDisplayed}
             setShuffle={setShuffle}
+            wallEditorImportClicked={wallEditorImportClicked}
+            setWallEditorImportClicked={setWallEditorImportClicked}
           />
         </div>
 

@@ -1,5 +1,6 @@
 import React from "react";
 import Draggable from "react-draggable";
+import { BsArrowDownRight } from "react-icons/bs";
 
 class Drag extends React.Component {
   constructor(props) {
@@ -132,14 +133,14 @@ class Drag extends React.Component {
                 left: this.state.left,
               }}
             />
-            <button style={{backgroud:"purple", height:'20', weight: '20'}}
+            <button style={{height:1, width:1, fontSize:8, background:'none', border:'none', float:'right', paddingTop:0}}
                         onMouseDown={this.mouseDown}
                         onMouseMove={this.mouseMove}
                         onMouseUp={this.mouseUp}
                         onTouchStart={this.mouseDown}
                         onTouchMove={this.mouseMove}
                         onTouchEnd={this.mouseUp}
-            >resize</button>
+            ><BsArrowDownRight /></button>
           </div>
         </div>
       </Draggable>

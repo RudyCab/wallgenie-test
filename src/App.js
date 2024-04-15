@@ -12,6 +12,8 @@ import "./App.css";
 
 function App() {
   const [importedImages, setImportedImages] = useState([]);
+  const [wallEditorImportClicked, setWallEditorImportClicked] = useState(false)
+  const [imageUploadParam, setImageUploadParam] = useState([])
   return (
     <Router>
       <div className="app-container">
@@ -19,7 +21,12 @@ function App() {
           <Route path="/wallgenie-test/" element={<HomePage />} />
           <Route
             path="/WallEditor"
-            element={<WallEditorPage images={importedImages} />}
+            element={<WallEditorPage images={importedImages} 
+            wallEditorImportClicked={wallEditorImportClicked}
+            setWallEditorImportClicked={setWallEditorImportClicked}
+            imageUploadParam={imageUploadParam}
+            setImageUploadParam={setImageUploadParam}
+            />}
           />
           <Route
             path="/Gallery"
@@ -27,6 +34,10 @@ function App() {
               <GalleryPage
                 importedImages={importedImages}
                 setImportedImages={setImportedImages}
+                wallEditorImportClicked={wallEditorImportClicked}
+                setWallEditorImportClicked={setWallEditorImportClicked}
+                imageUploadParam={imageUploadParam}
+                setImageUploadParam={setImageUploadParam}
               />
             }
           />

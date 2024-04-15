@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MdAddPhotoAlternate } from "react-icons/md";
 import GalleryGrid from "../Components/GalleryGrid/GalleryGrid";
 import "./GalleryPage.css";
 import { DecorItem } from "../Structs/DecorItem";
 
-function GalleryPage({ importedImages, setImportedImages }) {
+function GalleryPage({ importedImages, setImportedImages, wallEditorImportClicked,  setWallEditorImportClicked, setImageUploadParam, imageUploadParam}) {
   useEffect(() => {
     document.body.style.backgroundColor = "#215F5F";
 
@@ -36,6 +36,7 @@ function GalleryPage({ importedImages, setImportedImages }) {
       };
       reader.readAsDataURL(image);
     });
+    setWallEditorImportClicked(false)
   };
 
   const saveImageToLocalStorage = (imageData) => {
@@ -50,6 +51,7 @@ function GalleryPage({ importedImages, setImportedImages }) {
 
   return (
     <div>
+      {wallEditorImportClicked && handleImageUpload(imageUploadParam)}
       <div className="TopHeader">
         <p className="galleryText">Gallery</p>
         <span className="buttonContainer">

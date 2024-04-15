@@ -12,18 +12,29 @@ const Sidebar = ({
   setAlertDisplayed,
   setPopupType,
   setShuffle,
+  setWallEditorImportClicked,
+  setImageUploadParam
 }) => {
   const types = ["shuffle", "upload", "spotlight"];
   const icons = [TiArrowShuffle, RiImageAddFill, SiSpotlight];
 
-  const handleOnClick = (type) => {
+  const handleOnClick = (e, type) => {
     if (type == 0) {
       setShuffle(true);
-    } else {
+    } else if (type != 1) {
       setAlertDisplayed(true);
       setPopupType(types[type]);
     }
   };
+
+  const handleOnChange = (e, type) => {
+    console.log("HELLO")
+    if (type == 1) {
+      setWallEditorImportClicked(true)
+      console.log(Array.from(e.target.files))
+      setImageUploadParam(Array.from(e.target.files))
+    }
+  }
 
   return (
     <>
@@ -32,7 +43,7 @@ const Sidebar = ({
           <button
             key={index}
             className={"sidebar-button"}
-            onClick={() => handleOnClick(index)}
+            onClick={(e) => handleOnClick(e, index)}
             disabled={alertDisplayed}
           >
             <Icon
@@ -43,6 +54,14 @@ const Sidebar = ({
               }
               size={26}
             />
+            {index === 1 && <input
+              id="file-input"
+              type="file"
+              accept="image/*"
+              multiple
+              style={{ display: "none" }}
+              onChange={(e) => handleOnChange(Array.from(e.target.files))}
+            />}
           </button>
         ))}
       </div>
