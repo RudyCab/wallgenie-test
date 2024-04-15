@@ -8,18 +8,33 @@
 
 .DecorItem-Grid {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 15px;
   list-style-type: none;
 }
 
-.DecorItem-Grid li {
+.DecorItem-Row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 45px;
+  padding-left: 45px;
+  padding-right: 10px;
+}
+
+.DecorItem-Wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.DecorItem-Grid {
   display: flex;
   justify-content: center;
 }
 
 .DecorItem {
-  position: relative;
+  width: 100%;
+  height: auto;
 }
 
 .Carousel-Container {
@@ -37,7 +52,6 @@
   position: absolute;
   background-color: transparent;
   border-width: 0px;
-  font-size: xx-large;
   font-size: xx-large;
 }
 
@@ -61,4 +75,8 @@
   /* border-radius: 10px; */
   font-size: large;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.hidden {
+  display: none;
 }
