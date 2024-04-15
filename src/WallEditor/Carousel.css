@@ -6,28 +6,16 @@
   transform: translate(-4.5%);
 }
 
-.DecorItem-Grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 15px;
-  list-style-type: none;
-}
-
 .DecorItem-Row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 45px;
+  margin-bottom: 35px;
   padding-left: 45px;
   padding-right: 10px;
 }
 
 .DecorItem-Wrapper {
-  display: flex;
-  justify-content: center;
-}
-
-.DecorItem-Grid {
   display: flex;
   justify-content: center;
 }

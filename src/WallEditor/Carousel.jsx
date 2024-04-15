@@ -7,7 +7,7 @@ import {
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
 
-const ITEMS_PER_ROW = 3;
+const ITEMS_PER_ROW = 4;
 
 /*
 Now, acting as a carousel rather than a scrollable slider
@@ -43,7 +43,6 @@ const Carousel = ({
     <>
       {/* DISPLAY DECORITEMS */}
       <div className="DecorItem-Container">
-        {/* <ul className="DecorItem-Grid"> */}
           {rows.map((row, rowIndex) => (
             <div key={rowIndex} className="DecorItem-Row">
               {row.map((imageUrl, index) => (
@@ -59,6 +58,8 @@ const Carousel = ({
                   yWall={yWall}
                   widthWall={widthWall}
                   heightWall={heightWall}
+                  row={rowIndex}
+                  col={index % ITEMS_PER_ROW}
                 />
                 </div>
               ))}

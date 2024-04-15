@@ -6,8 +6,8 @@ class Drag extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      top: 0,
-      left: 0,
+      left: 0, // x
+      top: 0,  // y
       width: 0,
       height: 0,
       mouseStart: { x: 0, y: 0 },
@@ -27,16 +27,40 @@ class Drag extends React.Component {
     };
   }
 
+  // handleStop = (event, data) => {
+  //   const { xWall, yWall, widthWall, heightWall } = this.props;
+  //   const { x, y } = data;
+  //   console.log("xWall", xWall);
+  //   console.log("yWall", yWall);
+  //   console.log("widthWall", widthWall);
+  //   console.log("heightWall", heightWall);
+  //   console.log("x", x);
+  //   console.log("y", y);
+
+  //   // Check if any corner of the image is out of bounds
+  //   const isOutOfBounds =
+  //     // top left coordinates of img
+  //     x < xWall ||
+  //     y < yWall ||
+  //     // top right coordinates of img
+  //     x + this.state.width > xWall + widthWall ||
+  //     // bottom left coordinates of img
+  //     y + this.state.height > yWall + heightWall;
+
+  //   // if out of bounds, pop back to og position
+  //   if (isOutOfBounds) {
+  //     this.setState({ left: 0, top: 0 });
+  //   } else {
+  //     // use the Draggable lastX and lastY prop
+  //     this.setState((prevState) => ({
+  //       top: data.lastY,
+  //       left: data.lastX,
+  //     }));
+  //   }
+  // };
+
   handleStop = (event, data) => {
     // if its out of bounds, pop back to og position
-    console.log(this.props.xWall)
-    console.log(data.x)
-    console.log(Math.abs(data.y))
-    console.log(this.props.yWall)
-    console.log(this.props.heightWall + this.props.heightWall)
-    console.log(Math.abs(data.x) < 0)
-    console.log(Math.abs(data.y) < (this.props.yWall))
-    console.log(Math.abs(data.y) > (this.props.heightWall + this.props.heightWall))
     if (
       Math.abs(data.x) < 0 ||
       Math.abs(data.y) < this.props.yWall ||
@@ -141,7 +165,7 @@ class Drag extends React.Component {
                 left: this.state.left,
               }}
             />
-            <button style={{height:'1px', width:'1px', fontSize:'8px', background:'none', border:'none', float:'right', paddingTop:0}}
+             <button style={{height:'1px', width:'1px', fontSize:'8px', background:'none', border:'none', float:'right', paddingTop:0}}
                         onMouseDown={this.mouseDown}
                         onMouseMove={this.mouseMove}
                         onMouseUp={this.mouseUp}
