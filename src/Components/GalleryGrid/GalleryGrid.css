@@ -1,4 +1,4 @@
-.decorGrid-container {
+/* .decorGrid-container {
   display: flex;
   justify-content: center;
   overflow-y: auto;
@@ -8,22 +8,65 @@
 
 .decorGrid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 25px;
   list-style-type: none;
   margin-left: -32.5px;
-}
+} */
 
-.decorGrid li {
+/* .decorGrid li {
   display: flex;
   justify-content: center;
   align-items: center;
+} */
+
+/* .decorItem {
+  width: 80vw;
+} */
+
+/* .decorItem {
+  max-width: 300px; /* Adjust this value as needed */
+  /* width: 100%; Ensures images scale down proportionally */
+/* } */ */
+/* 
+.lastDecorItem {
+  margin-bottom: 200px;
+} */
+
+.decorGrid-container {
+  display: flex;
+  justify-content: center;
+  overflow-y: auto; 
+  max-height: 90vh;
+  position: relative;
+}
+
+.deleteIcon {
+  position: absolute; 
+  top: -1px;
+  left: -2px; 
+  z-index: 1;
+  background-color: transparent; 
+  border: none;
+  cursor: pointer; 
+  color: whitesmoke;
+}
+
+.decorGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-gap: 15px; 
+  list-style-type: none;
+  margin-top: 100px;
+}
+
+.decorGrid li {
+  padding-bottom: 25px; 
+  position: relative; 
+  display: inline-block;
 }
 
 .decorItem {
-  width: 80vw;
-}
-
-.lastDecorItem {
-  margin-bottom: 200px;
+  width: 35vw;
+  object-fit: cover;
 }

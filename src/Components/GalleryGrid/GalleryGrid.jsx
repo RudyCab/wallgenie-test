@@ -1,7 +1,8 @@
 import React from "react";
 import "./GalleryGrid.css";
+import { IoCloseCircleSharp } from "react-icons/io5";
 
-function GalleryGrid({ images }) {
+function GalleryGrid({ images, handleDelete }) {
   return (
     <div className="decorGrid-container">
       <ul className="decorGrid">
@@ -14,6 +15,8 @@ function GalleryGrid({ images }) {
                 index === images.length - 1 ? "lastDecorItem" : ""
               }`}
             />
+            {/* Add a delete button/icon */}
+            <IoCloseCircleSharp onClick={() => handleDelete(index)} className="deleteIcon" />
           </li>
         ))}
       </ul>

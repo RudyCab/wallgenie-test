@@ -49,13 +49,22 @@ function GalleryPage({ importedImages, setImportedImages, wallEditorImportClicke
     setImportedImages((prevImages) => [...prevImages, imageData]);
   };
 
+  const handleDelete = (index) => {
+    // Remove the image at the specified index
+    const updatedImages = [...importedImages];
+    updatedImages.splice(index, 1);
+    // Update state
+    setImportedImages(updatedImages);
+    // Update localStorage
+    localStorage.setItem("importedImages", JSON.stringify(updatedImages));
+  };
+
   return (
     <div>
       {wallEditorImportClicked && handleImageUpload(imageUploadParam)}
       <div className="TopHeader">
         <p className="galleryText">Gallery</p>
         <span className="buttonContainer">
-          {/* <button className="buttonSelect">Select</button> */}
           <label htmlFor="file-input">
             <MdAddPhotoAlternate className="iconButton" />
             {/* Hidden file input to trigger file selection */}
@@ -70,7 +79,7 @@ function GalleryPage({ importedImages, setImportedImages, wallEditorImportClicke
           </label>
         </span>
       </div>
-      <GalleryGrid images={importedImages} />
+      <GalleryGrid images={importedImages} handleDelete={handleDelete}/>
     </div>
   );
 }
