@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Draggable from "./Draggable";
 import "./Carousel.css";
 
@@ -22,6 +22,56 @@ const Carousel = ({
   heightWall,
 }) => {
   const [currentPanelIndex, setCurrentPanelIndex] = useState(0);
+  const [sumWidths, setSumWidths] = useState([]);
+  const [maxHeights, setMaxHeights] = useState([]);
+
+  useEffect(() => {
+    const calcDimensions = () => {
+      const sumW = [];
+      const hMax = [];
+
+      let sumWidths = 0;
+
+      // each row
+      for (let i = 0; i < images.length; i += ITEMS_PER_ROW) {
+        let rowMaxHeight = 0;
+        sumWidths = 0;
+
+        // each img in row
+        for (let j = i; j < i + ITEMS_PER_ROW && j < images.length; j++) {
+          const img = new Image();
+          img.src = images[j];
+          img.onload = () => {
+            
+            // for hd calculations
+            if (j === 0 || j === 3) { // reset to 0 for 1st image of each row
+              sumW.push(0);
+              sumWidths = 0;
+            } 
+            if (j % ITEMS_PER_ROW !== ITEMS_PER_ROW - 1) { // skip adding 4th img width
+              sumWidths = sumWidths + img.width;
+              sumW.push(sumWidths);
+            }
+            
+            // keep track of max height for vd calculations
+            if (img.height > rowMaxHeight) {
+              rowMaxHeight = img.height;
+            }
+
+            // stores max height for row
+            if (j === i + ITEMS_PER_ROW - 1 || j === images.length - 1) {
+              hMax.push(rowMaxHeight);
+            }
+          };
+        }
+      }
+
+      setSumWidths(sumW);
+      setMaxHeights(hMax);
+    };
+
+    calcDimensions();
+  }, [images]);
 
   // function to handle going to the previous panel
   const handlePrevPanel = () => {
@@ -58,8 +108,9 @@ const Carousel = ({
                   yWall={yWall}
                   widthWall={widthWall}
                   heightWall={heightWall}
-                  row={rowIndex}
-                  col={index % ITEMS_PER_ROW}
+                  sumWidths={sumWidths[index]}
+                  maxHeightPrev={rowIndex > 0 ? maxHeights[rowIndex - 1] : 0}
+                  maxHeights={maxHeights[Math.floor(index / ITEMS_PER_ROW)]}
                 />
                 </div>
               ))}

@@ -5,51 +5,72 @@ import { BsArrowDownRight } from "react-icons/bs";
 class Drag extends React.Component {
   constructor(props) {
     super(props);
+
+    // let hd = (335 - props.sumWidths) / 3;
+    // let vd = (props.maxHeights - props.height) / 2;
+
     this.state = {
-      left: 0, // x
-      top: 0,  // y
+      // left: 25 + props.sumWidths + (props.index % 4) * hd, // x
+      // top: 525 + Math.floor(props.index / 4) * (props.maxHeightPrev + 15) + vd,  // y
+      top: 0,
+      left: 0,
       width: 0,
       height: 0,
       mouseStart: { x: 0, y: 0 },
       dragging: false,
     };
+
+    // this.initPos();
+  }
+
+  initPos() {
+    let hd = (335 - this.props.sumWidths) / 3;
+    let vd = (this.props.maxHeights - this.state.height) / 2;
+
+    this.setState({
+      top: 525 + Math.floor(this.props.index / 4) * (this.props.maxHeightPrev + 15) + vd,
+      left: 25 + this.props.sumWidths + (this.props.index % 4) * hd,
+    });
+
+    // console.log("x", data.x);
+    // console.log("y", data.y);
   }
 
   componentDidMount() {
     const image = new Image();
     image.src = this.props.img;
     image.onload = () => {
-      // const aspectRatio = image.naturalWidth / image.naturalHeight;
+      const aspectRatio = image.naturalWidth / image.naturalHeight;
       this.setState({
-        width: image.naturalWidth * 0.1,
-        height: image.naturalHeight * 0.1,
+        // width: image.naturalWidth * 0.1,
+        // height: image.naturalHeight * 0.1,
+        height: 70,
+        width: 70 * aspectRatio,
       });
     };
   }
 
   // handleStop = (event, data) => {
-  //   const { xWall, yWall, widthWall, heightWall } = this.props;
-  //   const { x, y } = data;
-  //   console.log("xWall", xWall);
-  //   console.log("yWall", yWall);
-  //   console.log("widthWall", widthWall);
-  //   console.log("heightWall", heightWall);
-  //   console.log("x", x);
-  //   console.log("y", y);
+  //   console.log("xWall", this.props.xWall);
+  //   console.log("yWall", this.props.yWall);
+  //   console.log("widthWall", this.props.widthWall);
+  //   console.log("heightWall", this.props.heightWall);
+  //   console.log("x", this.state.top);
+  //   console.log("y", this.state.left);
 
-  //   // Check if any corner of the image is out of bounds
+  //   // check if any corner of the image is out of bounds
   //   const isOutOfBounds =
   //     // top left coordinates of img
-  //     x < xWall ||
-  //     y < yWall ||
+  //     this.state.left < this.props.xWall ||
+  //     this.state.top < this.props.yWall ||
   //     // top right coordinates of img
-  //     x + this.state.width > xWall + widthWall ||
+  //     this.state.left + this.state.width > this.props.xWall + this.props.widthWall ||
   //     // bottom left coordinates of img
-  //     y + this.state.height > yWall + heightWall;
+  //     this.state.top + this.state.height > this.props.yWall + this.props.heightWall;
 
   //   // if out of bounds, pop back to og position
   //   if (isOutOfBounds) {
-  //     this.setState({ left: 0, top: 0 });
+  //     this.initPos();
   //   } else {
   //     // use the Draggable lastX and lastY prop
   //     this.setState((prevState) => ({
@@ -60,6 +81,12 @@ class Drag extends React.Component {
   // };
 
   handleStop = (event, data) => {
+    // console.log("x", this.state.top);
+    // console.log("y", this.state.left);
+    console.log("sumW", this.props.sumWidths);
+    console.log("maxHeightPrev", this.props.maxHeightPrev);
+    console.log("maxHeights", this.props.maxHeights);
+
     // if its out of bounds, pop back to og position
     if (
       Math.abs(data.x) < 0 ||
@@ -70,6 +97,7 @@ class Drag extends React.Component {
         top: 0,
         left: 0,
       }));
+      // this.initPos()
     } else {
       // use the Draggable lastX and lastY prop
       this.setState((prevState) => ({
