@@ -87,11 +87,15 @@ class Drag extends React.Component {
     console.log("maxHeightPrev", this.props.maxHeightPrev);
     console.log("maxHeights", this.props.maxHeights);
 
+    console.log("********", data.x, data.y);
+
     // if its out of bounds, pop back to og position
     if (
-      Math.abs(data.x) < 0 ||
-      Math.abs(data.y) < this.props.yWall ||
-      Math.abs(data.y) > (this.props.yWall + this.props.heightWall)
+      false
+      // data.x < 0
+      // data.x > this.props.widthWall
+      // data.y < this.props.yWall
+    //   Math.abs(data.y) > (this.props.yWall + this.props.heightWall)
     ) {
       this.setState((prevState) => ({
         top: 0,

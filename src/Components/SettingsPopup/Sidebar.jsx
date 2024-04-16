@@ -5,6 +5,7 @@ import { RiImageAddFill } from "react-icons/ri";
 // import { IoCameraOutline } from "react-icons/io5";
 // import { MdOutlineSaveAlt } from "react-icons/md";
 import { SiSpotlight } from "react-icons/si";
+import { GiTrashCan } from "react-icons/gi";
 // import { VscSettings } from "react-icons/vsc";
 
 const Sidebar = ({
@@ -15,13 +16,16 @@ const Sidebar = ({
   setWallEditorImportClicked,
   setImageUploadParam
 }) => {
-  const types = ["shuffle", "upload", "spotlight"];
-  const icons = [TiArrowShuffle, RiImageAddFill, SiSpotlight];
+  const types = ["shuffle", "clear-all", "spotlight"];
+  const icons = [TiArrowShuffle, GiTrashCan, SiSpotlight];
 
   const handleOnClick = (e, type) => {
     if (type == 0) {
       setShuffle(true);
-    } else if (type != 1) {
+    } else if (type == 1){
+      // clear-all function
+      
+    } else {
       setAlertDisplayed(true);
       setPopupType(types[type]);
     }
