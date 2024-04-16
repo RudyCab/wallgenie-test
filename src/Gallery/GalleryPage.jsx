@@ -3,9 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { MdAddPhotoAlternate } from "react-icons/md";
 import GalleryGrid from "../Components/GalleryGrid/GalleryGrid";
 import "./GalleryPage.css";
-
 import { DecorItem } from "../Structs/DecorItem";
-
 
 function GalleryPage({ importedImages, setImportedImages, wallEditorImportClicked,  setWallEditorImportClicked, setImageUploadParam, imageUploadParam}) {
   useEffect(() => {
@@ -29,6 +27,7 @@ function GalleryPage({ importedImages, setImportedImages, wallEditorImportClicke
   }
 
   const handleImageUpload = (newImages) => {
+    console.log('inside image uplpoad method')
     newImages.forEach((image, index) => {
       // Convert image to Base64 string
       const reader = new FileReader();

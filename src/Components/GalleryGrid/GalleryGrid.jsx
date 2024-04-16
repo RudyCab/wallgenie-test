@@ -16,7 +16,7 @@ function GalleryGrid({ images, handleDelete }) {
               }`}
             />
             {/* Add a delete button/icon */}
-            <IoCloseCircleSharp onClick={() => handleDelete(index)} className="deleteIcon" />
+            <IoCloseCircleSharp size={25} onClick={() => handleDelete(index)} className="deleteIcon" />
           </li>
         ))}
       </ul>
