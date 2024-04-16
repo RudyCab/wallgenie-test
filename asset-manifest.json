@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/wallgenie-test/static/css/main.36b5e46b.css",
-    "main.js": "/wallgenie-test/static/js/main.7d95880c.js",
+    "main.css": "/wallgenie-test/static/css/main.56acbe40.css",
+    "main.js": "/wallgenie-test/static/js/main.0229df7d.js",
     "static/js/453.21f6ae68.chunk.js": "/wallgenie-test/static/js/453.21f6ae68.chunk.js",
     "static/media/logo.png": "/wallgenie-test/static/media/logo.2fbe5ab5045063e38418.png",
     "static/media/hardCodedCurrent.png": "/wallgenie-test/static/media/hardCodedCurrent.0742e3225e14c01a2c6f.png",
     "index.html": "/wallgenie-test/index.html",
-    "main.36b5e46b.css.map": "/wallgenie-test/static/css/main.36b5e46b.css.map",
-    "main.7d95880c.js.map": "/wallgenie-test/static/js/main.7d95880c.js.map",
+    "main.56acbe40.css.map": "/wallgenie-test/static/css/main.56acbe40.css.map",
+    "main.0229df7d.js.map": "/wallgenie-test/static/js/main.0229df7d.js.map",
     "453.21f6ae68.chunk.js.map": "/wallgenie-test/static/js/453.21f6ae68.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.36b5e46b.css",
-    "static/js/main.7d95880c.js"
+    "static/css/main.56acbe40.css",
+    "static/js/main.0229df7d.js"
   ]
 }
