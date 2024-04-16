@@ -6,6 +6,7 @@ import "./GalleryPage.css";
 
 import { DecorItem } from "../Structs/DecorItem";
 
+
 function GalleryPage({ importedImages, setImportedImages, wallEditorImportClicked,  setWallEditorImportClicked, setImageUploadParam, imageUploadParam}) {
   useEffect(() => {
     document.body.style.backgroundColor = "#215F5F";
