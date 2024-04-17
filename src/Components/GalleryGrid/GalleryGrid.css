@@ -4,7 +4,7 @@
   overflow-y: auto; 
   max-height: 90vh;
   position: relative;
-  margin-top: 50px;
+  margin-top: 75px;
   margin-left: -20px;
 }
 
@@ -28,13 +28,17 @@
 }
 
 .decorGrid li {
-  padding-bottom: 25px; 
+  padding-bottom: 80px; 
   position: relative; 
   display: inline-block;
-  margin-top: -20px;
+  margin-top: -70px;
 }
 
 .decorItem {
   width: 35vw;
   object-fit: cover;
+}
+
+.lastDecorItem {
+  margin-bottom: 80px;
 }
