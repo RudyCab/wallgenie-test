@@ -111,16 +111,36 @@ class Drag extends React.Component {
     }
   };
 
+
   handleShuffle = () => {
+    const tops = [-200, -225, -250, -275, -300]
+    const lefts = [-50, -45, -40, -35, -30, -25, -20, -15, -10, -5, 5, 10,
+                    15, 20, 25, 30, 35, 40, 45, 50]
+                    
     if (this.state.top !== 0 && this.state.left !== 0) {
       this.setState((prevState) => ({
         // randomly calculate an x and y value that are within their respective bounds
-        top: -1 * (Math.random() * this.props.heightWall + this.props.yWall),
-        left: (Math.random() * (this.props.widthWall - this.state.width)),
+        // top: -1 * (Math.random() * this.props.heightWall + this.props.yWall),
+        // left: (Math.random() * (this.props.widthWall - this.state.width)),
+        top: tops[Math.floor(Math.random() * tops.length)],
+        left: lefts[Math.floor(Math.random() * tops.length)]
       }));
     }
     this.props.setShuffle(false);
   };
+
+  handleClearAll = () => {
+    console.log("clear clicked")
+    // if its on the wall 
+    if (this.state.top !== 0 && this.state.left !== 0) {
+      this.setState((prevState) => ({
+        // randomly calculate an x and y value that are within their respective bounds
+        top: 0,
+        left: 0
+      }));
+    }
+    this.props.setClearAll(false);
+  }
 
   resizeImg = (e) => {
     this.setState((prevState) => ({
@@ -172,6 +192,8 @@ class Drag extends React.Component {
       >
         <div>
           {this.props.shuffle && this.handleShuffle()}
+          {console.log(this.props.clearAll)}
+          {this.props.clearAll && this.handleClearAll()}
           <div
             style={{
               // resize: "both",

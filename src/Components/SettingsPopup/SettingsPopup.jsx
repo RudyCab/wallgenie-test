@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 import "./SettingsPopup.css";
 import "reactjs-popup/dist/index.css";
 
-const SettingsPopup = ({ alertDisplayed, setAlertDisplayed, setShuffle, setWallEditorImportClicked, setImageUploadParam }) => {
+const SettingsPopup = ({ alertDisplayed, setAlertDisplayed, setShuffle, setClearAll, setWallEditorImportClicked, setImageUploadParam }) => {
   const [popupType, setPopupType] = useState(""); // shuffle, multiselect, upload, wall-settings
 
   return (
@@ -28,6 +28,7 @@ const SettingsPopup = ({ alertDisplayed, setAlertDisplayed, setShuffle, setWallE
         setAlertDisplayed={setAlertDisplayed}
         setPopupType={setPopupType}
         setShuffle={setShuffle}
+        setClearAll={setClearAll}
         setWallEditorImportClicked={setWallEditorImportClicked}
         setImageUploadParam={setImageUploadParam}
       />
