@@ -8,6 +8,9 @@ import { SiSpotlight } from "react-icons/si";
 import { GiTrashCan } from "react-icons/gi";
 // import { VscSettings } from "react-icons/vsc";
 
+import html2canvas from "html2canvas";
+import { saveAs } from "file-saver";
+
 const Sidebar = ({
   alertDisplayed,
   setAlertDisplayed,
@@ -20,16 +23,38 @@ const Sidebar = ({
   const icons = [TiArrowShuffle, GiTrashCan, SiSpotlight];
 
   const handleOnClick = (e, type) => {
-    if (type == 0) {
+    if (type === 0) {
       setShuffle(true);
-    } else if (type == 1){
+    } else if (type === 1) {
       // clear-all function
-      
-    } else {
-      setAlertDisplayed(true);
-      setPopupType(types[type]);
+    } else if (type === 2) {
+      // Specify the element or region to capture
+
+      const wallComponentContainer = document.querySelector(".app-container");
+      console.log("wall component ",wallComponentContainer )
+      setSpotlight(wallComponentContainer);
     }
+    setAlertDisplayed(true);
+    setPopupType(types[type]);
   };
+
+  const setSpotlight = (wallComponentContainer) => {
+    // Capture the content of the specified element using html2canvas
+    html2canvas(wallComponentContainer)
+      .then((canvas) => {
+        // Convert canvas to a data URL
+        const dataURL = canvas.toDataURL();
+        // Save the data URL to local storage
+        localStorage.setItem("screenshot", dataURL);
+        // setImagePath(dataURL);
+
+        // Optionally, you can also download the screenshot
+      })
+      .catch((error) => {
+        console.error("Error capturing screenshot:", error);
+      });
+  };
+  
 
   const handleOnChange = (e, type) => {
     console.log("HELLO")

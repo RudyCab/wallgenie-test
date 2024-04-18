@@ -1,14 +1,24 @@
 import { Link } from "react-router-dom";
 import "./HomePage.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../logo.png";
 import CurrentProjectCard from "../Components/CurrentProjectCard/CurrentProjectCard";
 
 function HomePage() {
+
+  const [imagePath, setImagePath] = useState("");
+
   useEffect(() => {
     document.body.style.backgroundColor = "#215F5F";
     return () => {
       document.body.style.backgroundColor = "";
+
+      const storedImage = localStorage.getItem("screenshot");
+      // Check if storedImage exists
+      if (storedImage) {
+        // If image data exists, update the state with the image path
+        setImagePath(storedImage);
+      }
     };
   }, []);
 
@@ -23,7 +33,7 @@ function HomePage() {
     <div>
       <img id="logo" src={logo} alt="logo of name and genie lamp" />
       <div className="homepage-button-container">
-        <CurrentProjectCard imagePath="path_to_your_current_project_image" />{" "}
+        <CurrentProjectCard imagePath={imagePath} />
         <Link to="/WallEditor">
           <button className="new-project-button">New Project</button>
         </Link>

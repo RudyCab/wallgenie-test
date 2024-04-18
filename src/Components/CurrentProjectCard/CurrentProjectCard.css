@@ -13,9 +13,13 @@
 
 .current-project-card img {
   width: 100%;
-  height: auto;
+  height: 230px;
   border-radius: 30px;
   padding: 17.5px;
+  object-fit: cover;
+  object-position: center 27%;
+  /* background-size: cover; */
+  /* background-position: center; */
 }
 
 .current-project-card span {
