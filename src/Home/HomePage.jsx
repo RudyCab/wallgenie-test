@@ -14,6 +14,7 @@ function HomePage() {
       document.body.style.backgroundColor = "";
 
       const storedImage = localStorage.getItem("screenshot");
+      
       // Check if storedImage exists
       if (storedImage) {
         setImagePath(storedImage);
