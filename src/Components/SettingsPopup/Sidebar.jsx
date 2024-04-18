@@ -9,7 +9,6 @@ import { GiTrashCan } from "react-icons/gi";
 // import { VscSettings } from "react-icons/vsc";
 
 import html2canvas from "html2canvas";
-import { saveAs } from "file-saver";
 
 const Sidebar = ({
   alertDisplayed,

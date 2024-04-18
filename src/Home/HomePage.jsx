@@ -16,8 +16,8 @@ function HomePage() {
       const storedImage = localStorage.getItem("screenshot");
       // Check if storedImage exists
       if (storedImage) {
-        // If image data exists, update the state with the image path
         setImagePath(storedImage);
+        
       }
     };
   }, []);

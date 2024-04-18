@@ -5,10 +5,7 @@ import hardCodedCurrentImage from "./hardCodedCurrent.png";
 function CurrentProjectCard({ imagePath }) {
   if (imagePath == "") {
     imagePath = hardCodedCurrentImage
-  } else {
-    
   }
-
   return (
     <div className="current-project-card">
       <img src={imagePath} alt="Current Project Image" />
