@@ -116,6 +116,7 @@ class Drag extends React.Component {
     const tops = [-200, -225, -250, -275, -300]
     const lefts = [-50, -45, -40, -35, -30, -25, -20, -15, -10, -5, 5, 10,
                     15, 20, 25, 30, 35, 40, 45, 50]
+                    
     if (this.state.top !== 0 && this.state.left !== 0) {
       this.setState((prevState) => ({
         // randomly calculate an x and y value that are within their respective bounds
