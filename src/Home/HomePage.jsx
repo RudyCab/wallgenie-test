@@ -19,7 +19,7 @@ function HomePage() {
         setImagePath(storedImage);
       }
     };
-  }, []);
+  }, [localStorage.getItem("screenshot")]);
 
   // updates background color behind iPhone top notch
   let themeColor = "#215F5F";
