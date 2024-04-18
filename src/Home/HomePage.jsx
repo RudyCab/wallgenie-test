@@ -17,8 +17,6 @@ function HomePage() {
       // Check if storedImage exists
       if (storedImage) {
         setImagePath(storedImage);
-
-        
       }
     };
   }, []);

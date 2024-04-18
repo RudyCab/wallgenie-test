@@ -7,6 +7,7 @@ import { RiImageAddFill } from "react-icons/ri";
 import { SiSpotlight } from "react-icons/si";
 import { GiTrashCan } from "react-icons/gi";
 // import { VscSettings } from "react-icons/vsc";
+import { saveAs } from "file-saver";
 
 import html2canvas from "html2canvas";
 
@@ -48,6 +49,7 @@ const Sidebar = ({
         // setImagePath(dataURL);
 
         // Optionally, you can also download the screenshot
+        saveAs(dataURL, "wallScreenshot.png");
       })
       .catch((error) => {
         console.error("Error capturing screenshot:", error);
