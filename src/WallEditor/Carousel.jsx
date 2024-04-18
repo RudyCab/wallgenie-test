@@ -16,6 +16,8 @@ const Carousel = ({
   images,
   shuffle,
   setShuffle,
+  clearAll,
+  setClearAll,
   xWall,
   yWall,
   widthWall,
@@ -104,6 +106,8 @@ const Carousel = ({
                   className="DecorItem"
                   shuffle={shuffle}
                   setShuffle={setShuffle}
+                  clearAll={clearAll}
+                  setClearAll={setClearAll}
                   xWall={xWall}
                   yWall={yWall}
                   widthWall={widthWall}

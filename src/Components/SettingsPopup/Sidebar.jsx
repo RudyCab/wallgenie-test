@@ -16,6 +16,7 @@ const Sidebar = ({
   setAlertDisplayed,
   setPopupType,
   setShuffle,
+  setClearAll,
   setWallEditorImportClicked,
   setImageUploadParam
 }) => {
@@ -27,6 +28,7 @@ const Sidebar = ({
       setShuffle(true);
     } else if (type === 1) {
       // clear-all function
+      setClearAll(true)
     } else if (type === 2) {
       // Specify the element or region to capture
 

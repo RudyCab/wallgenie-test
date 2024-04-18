@@ -122,6 +122,19 @@ class Drag extends React.Component {
     this.props.setShuffle(false);
   };
 
+  handleClearAll = () => {
+    console.log("clear clicked")
+    // if its on the wall 
+    if (this.state.top !== 0 && this.state.left !== 0) {
+      this.setState((prevState) => ({
+        // randomly calculate an x and y value that are within their respective bounds
+        top: 0,
+        left: 0
+      }));
+    }
+    this.props.setClearAll(false);
+  }
+
   resizeImg = (e) => {
     this.setState((prevState) => ({
       width: e.clientX || e.touches[0].clientX,
@@ -172,6 +185,8 @@ class Drag extends React.Component {
       >
         <div>
           {this.props.shuffle && this.handleShuffle()}
+          {console.log(this.props.clearAll)}
+          {this.props.clearAll && this.handleClearAll()}
           <div
             style={{
               // resize: "both",

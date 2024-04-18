@@ -25,6 +25,7 @@ function WallEditorPage({ images, wallEditorImportClicked, setWallEditorImportCl
 
   const [alertDisplayed, setAlertDisplayed] = useState(false);
   const [shuffle, setShuffle] = useState(false);
+  const [clearAll, setClearAll] = useState(false);
 
   const parentRef = useRef(null);
 
@@ -130,6 +131,7 @@ function WallEditorPage({ images, wallEditorImportClicked, setWallEditorImportCl
             alertDisplayed={alertDisplayed}
             setAlertDisplayed={setAlertDisplayed}
             setShuffle={setShuffle}
+            setClearAll={setClearAll}
             wallEditorImportClicked={wallEditorImportClicked}
             setWallEditorImportClicked={setWallEditorImportClicked}
           />
@@ -193,6 +195,8 @@ function WallEditorPage({ images, wallEditorImportClicked, setWallEditorImportCl
             images={images}
             shuffle={shuffle}
             setShuffle={setShuffle}
+            clearAll={clearAll}
+            setClearAll={setClearAll}
             xWall={wall.coordinates.x}
             yWall={wall.coordinates.y}
             widthWall={wall.size.width}
