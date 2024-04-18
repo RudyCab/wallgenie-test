@@ -8,6 +8,7 @@ function CurrentProjectCard({ imagePath }) {
   }
 
   console.log("image path ", imagePath);
+  
   return (
     <div className="current-project-card">
       <img src={imagePath} alt="Current Project Image" />
