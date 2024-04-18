@@ -22,6 +22,32 @@ const Sidebar = ({
   const types = ["shuffle", "clear-all", "spotlight"];
   const icons = [TiArrowShuffle, GiTrashCan, SiSpotlight];
 
+  // Client-side code
+
+// const handleOnClick = (e, type) => {
+//   if (type === 0) {
+//     setShuffle(true);
+//   } else if (type === 1) {
+//     // clear-all function
+//   } else if (type === 2) {
+//     // Send a request to the server to capture and generate the screenshot
+//     fetch('/capture-screenshot')
+//       .then(response => response.blob())
+//       .then(blob => {
+//         // Create a blob URL for the screenshot
+//         const screenshotUrl = URL.createObjectURL(blob);
+//         // Download the screenshot
+//         saveAs(screenshotUrl, 'wallScreenshot.png');
+//       })
+//       .catch(error => {
+//         console.error('Error capturing screenshot:', error);
+//       });
+//   }
+//   setAlertDisplayed(true);
+//   setPopupType(types[type]);
+// };
+
+
   const handleOnClick = (e, type) => {
     if (type === 0) {
       setShuffle(true);
@@ -37,6 +63,50 @@ const Sidebar = ({
     setAlertDisplayed(true);
     setPopupType(types[type]);
   };
+
+
+  // Server-side code (assuming Express.js)
+
+// const express = require('express');
+// const html2canvas = require('html2canvas');
+// const { createReadStream } = require('fs');
+
+// const app = express();
+
+// // Endpoint to capture and generate the screenshot
+// app.get('/capture-screenshot', (req, res) => {
+//   const wallComponentContainer = document.querySelector('.app-container');
+
+//   // Capture the content of the specified element using html2canvas
+//   html2canvas(wallComponentContainer)
+//     .then(canvas => {
+//       // Convert canvas to a blob
+//       return new Promise((resolve, reject) => {
+//         canvas.toBlob(blob => {
+//           if (blob) {
+//             resolve(blob);
+//           } else {
+//             reject(new Error('Failed to convert canvas to blob'));
+//           }
+//         });
+//       });
+//     })
+//     .then(blob => {
+//       // Send the blob as response
+//       res.setHeader('Content-Type', 'image/png');
+//       createReadStream(blob).pipe(res);
+//     })
+//     .catch(error => {
+//       console.error('Error capturing screenshot:', error);
+//       res.status(500).send('Internal Server Error');
+//     });
+// });
+
+// Start the server
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`);
+// });
 
   const setSpotlight = (wallComponentContainer) => {
     // Capture the content of the specified element using html2canvas

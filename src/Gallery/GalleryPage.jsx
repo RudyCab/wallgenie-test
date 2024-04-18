@@ -27,7 +27,6 @@ function GalleryPage({ importedImages, setImportedImages, wallEditorImportClicke
   }
 
   const handleImageUpload = (newImages) => {
-    console.log('inside image uplpoad method')
     newImages.forEach((image, index) => {
       // Convert image to Base64 string
       const reader = new FileReader();
